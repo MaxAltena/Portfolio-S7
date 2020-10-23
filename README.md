@@ -1,27 +1,13 @@
-# PortfolioS7
+# Portfolio-S7
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0.
+[![Build and Deploy](https://github.com/MaxAltena/Portfolio-S7/workflows/Build%20and%20Deploy/badge.svg)](https://github.com/MaxAltena/Portfolio-S7/actions?query=workflow%3A%22Build+and+Deploy%22)
+[![Website](https://img.shields.io/website?down_color=red&down_message=offline&up_color=green&up_message=online&url=https%3A%2F%2Fmaxaltena.com)](https://portfolio.maxaltena.com/S7/)
+[![Version](https://img.shields.io/github/package-json/v/MaxAltena/Portfolio-S7)](https://github.com/MaxAltena/Portfolio-S7)
+[![Watchers](https://img.shields.io/github/watchers/MaxAltena/Portfolio-S7)](https://github.com/MaxAltena/Portfolio-S7/watchers)
+[![Stars](https://img.shields.io/github/stars/MaxAltena/Portfolio-S7)](https://github.com/MaxAltena/Portfolio-S7/stargazers)
+[![Issues](https://img.shields.io/github/issues/MaxAltena/Portfolio-S7)](https://github.com/MaxAltena/Portfolio-S7/issues)
+[![Pull requests](https://img.shields.io/github/issues-pr/MaxAltena/Portfolio-S7)](https://github.com/MaxAltena/Portfolio-S7/pulls)
+[![Follow @MaxAltena](https://img.shields.io/github/followers/maxaltena?label=Follow&style=social)](https://github.com/MaxAltena)
 
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+> The porfolio of Max Altena for Semester 7 which was a minor named Digital Experience Design.
+> Find it on [https://portfolio.maxaltena.com/S7/](https://portfolio.maxaltena.com/S7/)!

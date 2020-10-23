@@ -1,0 +1,60 @@
+#app {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+
+	mat-toolbar {
+		.margin-right-16 {
+			margin-right: 16px;
+		}
+	}
+
+	.spacer {
+		flex: 1 1 auto;
+	}
+
+	mat-sidenav-container {
+		flex-grow: 1;
+
+		mat-sidenav {
+			min-width: 180px;
+			padding-bottom: 32px;
+
+			.mat-icon {
+				margin-right: 16px;
+			}
+
+			.bottomStick {
+				position: absolute;
+				width: 100%;
+				bottom: 40px;
+			}
+			.bottomRelative {
+				position: relative;
+			}
+		}
+
+		mat-sidenav-content {
+			position: relative;
+			overflow-x: hidden;
+
+			#container {
+				margin: 0 auto;
+				max-width: 1280px;
+				width: 90%;
+				padding: 16px;
+			}
+
+			@media only screen and (min-width: 601px) {
+				#container {
+					width: 85%;
+				}
+			}
+			@media only screen and (min-width: 993px) {
+				#container {
+					width: 70%;
+				}
+			}
+		}
+	}
+}
