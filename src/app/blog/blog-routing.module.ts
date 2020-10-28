@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { PageNotFound } from 'src/app/pages';
+import { PageNotFoundComponent } from 'src/app/pages';
 
 import { BlogComponent } from './blog.component';
 
@@ -31,7 +31,7 @@ const routes: Routes = [
 	},
 	{
 		path: '**',
-		component: PageNotFound,
+		component: PageNotFoundComponent,
 	},
 ];
 

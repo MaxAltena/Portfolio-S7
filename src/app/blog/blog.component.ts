@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-	selector: 'scully-blog',
+	selector: 'app-scully',
 	templateUrl: './blog.component.html',
 	styleUrls: ['./blog.component.scss'],
 })

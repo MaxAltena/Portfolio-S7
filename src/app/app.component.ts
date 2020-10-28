@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { ActivatedRoute, RouterOutlet } from '@angular/router';
 import { fadeAnimation } from 'src/utils/route-animations';
 
 interface NavItem {
@@ -18,14 +18,14 @@ interface SubNavItem {
 }
 
 @Component({
-	selector: 'portfolio-s7',
+	selector: 'app-portfolio-s7',
 	templateUrl: './app.component.html',
 	styleUrls: ['./app.component.scss'],
 	animations: [fadeAnimation],
 })
 export class AppComponent {
-	title: string = 'Portfolio S7 – Max Altena';
-	opened: boolean = true;
+	title = 'Portfolio S7 – Max Altena';
+	opened = true;
 	navList: NavItem[] = [
 		{ heading: 'Home', link: '/', icon: 'home', pages: [] },
 		{ heading: 'About', link: '/about', icon: 'person', pages: [] },
@@ -60,7 +60,7 @@ export class AppComponent {
 		},
 	];
 
-	prepareRoute(outlet: RouterOutlet) {
+	prepareRoute(outlet: RouterOutlet): ActivatedRoute | '' {
 		return outlet.isActivated ? outlet.activatedRoute : '';
 	}
 }

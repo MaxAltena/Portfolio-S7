@@ -1,28 +1,31 @@
 import { Routes } from '@angular/router';
 import { Item } from 'src/types/item';
 
-export const getRoutes = (_items: Item[]): Routes => {
-	let _routes: Routes = [];
+export const getRoutes = (items: Item[]): Routes => {
+	const routes: Routes = [];
 
-	_items.forEach((_item: Item) => {
-		_routes.push({ path: _item.path, component: _item.component });
+	items.forEach((item: Item) => {
+		routes.push({ path: item.path, component: item.component });
 
-		if (_item.redirects)
-			_item.redirects.forEach((_redirect: string) => {
-				_routes.push({ path: _redirect, redirectTo: _item.path });
+		if (item.redirects) {
+			item.redirects.forEach((redirect: string) => {
+				routes.push({ path: redirect, redirectTo: item.path });
 			});
+		}
 
-		if (_item.pages)
-			_item.pages.forEach((_page: Item) => {
-				_routes.push({ path: `${_item.path}/${_page.path}`, component: _page.component });
+		if (item.pages) {
+			item.pages.forEach((page: Item) => {
+				routes.push({ path: `${item.path}/${page.path}`, component: page.component });
 
-				if (_page.redirects)
-					_page.redirects.forEach((_redirect: string) => {
-						_routes.push({ path: `${_item.path}/${_redirect}`, redirectTo: `${_item.path}/${_page.path}` });
-						_routes.push({ path: _redirect, redirectTo: `${_item.path}/${_page.path}` });
+				if (page.redirects) {
+					page.redirects.forEach((redirect: string) => {
+						routes.push({ path: `${item.path}/${redirect}`, redirectTo: `${item.path}/${page.path}` });
+						routes.push({ path: redirect, redirectTo: `${item.path}/${page.path}` });
 					});
+				}
 			});
+		}
 	});
 
-	return _routes;
+	return routes;
 };

@@ -1,10 +1,10 @@
 import { Item } from 'src/types/item';
-import { PageHome, PageAbout, PageNotFound } from 'src/app/pages';
+import { PageHomeComponent, PageAboutComponent, PageNotFoundComponent } from 'src/app/pages';
 
 export const items: Item[] = [
 	{
 		path: '',
-		component: PageHome,
+		component: PageHomeComponent,
 		title: 'Home',
 		icon: 'home',
 		redirects: ['home', 'thuis'],
@@ -13,7 +13,7 @@ export const items: Item[] = [
 	},
 	{
 		path: 'about',
-		component: PageAbout,
+		component: PageAboutComponent,
 		title: 'About',
 		icon: 'person',
 		redirects: ['over'],
@@ -22,7 +22,7 @@ export const items: Item[] = [
 	},
 	{
 		path: '404',
-		component: PageNotFound,
+		component: PageNotFoundComponent,
 		title: 'Not found',
 		icon: 'person',
 		redirects: ['not-found', 'niet-gevonden'],
