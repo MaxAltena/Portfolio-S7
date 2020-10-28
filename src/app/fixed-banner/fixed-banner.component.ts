@@ -1,8 +1,0 @@
-import { Component } from '@angular/core';
-
-@Component({
-	selector: 'app-fixed-banner',
-	templateUrl: './fixed-banner.component.html',
-	styleUrls: ['./fixed-banner.component.scss'],
-})
-export class FixedBannerComponent {}

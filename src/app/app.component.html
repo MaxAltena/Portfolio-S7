@@ -5,30 +5,54 @@
 		</button>
 		<h1>{{ title }}</h1>
 		<span class="spacer"></span>
-		<div>
-			<a mat-button routerLink="/"> home </a>
-			<a mat-button routerLink="/about"> about </a>
-		</div>
 	</mat-toolbar>
 
 	<mat-sidenav-container>
 		<mat-sidenav #sidenav mode="side" [(opened)]="opened">
 			<mat-nav-list>
-				<a mat-list-item routerLink="/"> <mat-icon>home</mat-icon> <span>home</span> </a>
-				<a mat-list-item routerLink="/about"> <mat-icon>person</mat-icon> <span>about</span> </a>
-				<div [ngClass]="appropriateClass">
-					<mat-list-item (click)="sidenav.toggle()">
-						<mat-icon>chevron_left</mat-icon> <span>collapse</span>
-					</mat-list-item>
+				<div *ngFor="let navItem of navList">
+					<div [ngSwitch]="navItem.pages.length">
+						<div *ngSwitchCase="'0'">
+							<a
+								mat-list-item
+								routerLink="{{ navItem.link }}"
+								routerLinkActive="active-item"
+								[routerLinkActiveOptions]="{ exact: true }"
+							>
+								<mat-icon mat-list-icon *ngIf="navItem.icon">{{ navItem.icon }}</mat-icon>
+								<div mat-list-icon *ngIf="navItem.emoji">{{ navItem.emoji }}</div>
+								<div mat-line>{{ navItem.heading }}</div>
+							</a>
+						</div>
+						<div *ngSwitchDefault>
+							<div mat-subheader>
+								<mat-icon mat-list-icon *ngIf="navItem.icon">{{ navItem.icon }}</mat-icon>
+								<div mat-list-icon *ngIf="navItem.emoji">{{ navItem.emoji }}</div>
+								<div mat-line>{{ navItem.heading }}</div>
+							</div>
+							<div *ngFor="let navPage of navItem.pages">
+								<a
+									mat-list-item
+									routerLink="{{ navItem.link }}{{ navPage.link }}"
+									routerLinkActive="active-item"
+									[routerLinkActiveOptions]="{ exact: true }"
+								>
+									<mat-icon mat-list-icon *ngIf="navPage.icon">{{ navPage.icon }}</mat-icon>
+									<div mat-list-icon *ngIf="navPage.emoji">{{ navPage.emoji }}</div>
+									<div mat-line>{{ navPage.title }}</div>
+								</a>
+							</div>
+						</div>
+					</div>
 				</div>
 			</mat-nav-list>
 		</mat-sidenav>
 		<mat-sidenav-content>
-			<div id="container">
-				<router-outlet></router-outlet>
-			</div>
+			<main [@routeAnimations]="prepareRoute(outlet)">
+				<router-outlet #outlet="outlet"></router-outlet>
+			</main>
 		</mat-sidenav-content>
 	</mat-sidenav-container>
 
-	<app-fixed-banner></app-fixed-banner>
+	<fixed-banner></fixed-banner>
 </div>

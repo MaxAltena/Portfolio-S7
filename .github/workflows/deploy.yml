@@ -30,6 +30,7 @@ jobs:
       - name: Build project
         run: |
           npm run build:prod --if-present
+          npm run scully --if-present
           git reset --hard
       - name: FTP deploy
         uses: SamKirkland/FTP-Deploy-Action@master
@@ -37,9 +38,9 @@ jobs:
           ftp-server: ${{ secrets.FTP_SERVER }}${{ secrets.FTP_PATH }}
           ftp-username: ${{ secrets.FTP_USERNAME }}
           ftp-password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: dist/Portfolio-S7/
+          local-dir: dist/static/
       - name: Archive build artifact
         uses: actions/upload-artifact@master
         with:
           name: build
-          path: dist/Portfolio-S7/
+          path: dist/static/

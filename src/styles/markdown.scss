@@ -1,0 +1,19 @@
+p {
+	line-height: 1.62;
+}
+
+h1 {
+	font-size: 3rem;
+	font-weight: bold;
+
+	&::before {
+		content: '# ';
+		opacity: 0.6;
+		transition: opacity 200ms ease-in-out;
+
+		&:hover,
+		&:active {
+			opacity: 0.8;
+		}
+	}
+}

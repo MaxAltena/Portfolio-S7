@@ -1,25 +1,66 @@
-import { Component, HostListener } from '@angular/core';
+import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
+import { fadeAnimation } from 'src/utils/route-animations';
+
+interface NavItem {
+	heading: string;
+	link: string;
+	icon?: string;
+	emoji?: string;
+	pages: SubNavItem[];
+}
+
+interface SubNavItem {
+	title: string;
+	link: string;
+	icon?: string;
+	emoji?: string;
+}
 
 @Component({
-	selector: 'app-root',
+	selector: 'portfolio-s7',
 	templateUrl: './app.component.html',
 	styleUrls: ['./app.component.scss'],
+	animations: [fadeAnimation],
 })
 export class AppComponent {
-	title = 'Portfolio S7 – Max Altena';
-	opened = true;
-	appropriateClass = '';
+	title: string = 'Portfolio S7 – Max Altena';
+	opened: boolean = true;
+	navList: NavItem[] = [
+		{ heading: 'Home', link: '/', icon: 'home', pages: [] },
+		{ heading: 'About', link: '/about', icon: 'person', pages: [] },
+		{
+			heading: 'Human Centered Design',
 
-	@HostListener('window:resize', ['$event'])
-	getScreenHeight(): void {
-		//console.log(window.innerHeight);
-		if (window.innerHeight <= 412) {
-			this.appropriateClass = 'bottomRelative';
-		} else {
-			this.appropriateClass = 'bottomStick';
-		}
-	}
-	constructor() {
-		this.getScreenHeight();
+			link: '/human-centered-design',
+			pages: [{ title: 'Design Probes', icon: 'home', link: '/design-probes' }],
+		},
+		{
+			heading: 'Critical Design',
+			link: '/critical-design',
+			pages: [{ title: 'Personal Manifesto', icon: 'home', link: '/personal-manifesto' }],
+		},
+		{
+			heading: 'Story Creation',
+
+			link: '/story-creation',
+			pages: [{ title: 'Story Telling', icon: 'home', link: '/story-telling' }],
+		},
+		{
+			heading: 'Media Theory',
+
+			link: '/media-theory',
+			pages: [{ title: 'Replika', icon: 'home', link: '/replika' }],
+		},
+		{
+			heading: 'Other',
+			emoji: '😇',
+			link: '/other',
+			pages: [{ title: 'VEGA Collab', emoji: '😪', link: '/vega-collab' }],
+		},
+	];
+
+	prepareRoute(outlet: RouterOutlet) {
+		return outlet.isActivated ? outlet.activatedRoute : '';
 	}
 }

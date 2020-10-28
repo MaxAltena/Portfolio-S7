@@ -1,9 +1,13 @@
 #app {
 	min-height: 100vh;
+	height: 100vh;
+	overflow-y: hidden;
 	display: flex;
 	flex-direction: column;
 
 	mat-toolbar {
+		padding: 16px;
+
 		.margin-right-16 {
 			margin-right: 16px;
 		}
@@ -17,43 +21,38 @@
 		flex-grow: 1;
 
 		mat-sidenav {
-			min-width: 180px;
+			width: 250px;
 			padding-bottom: 32px;
 
-			.mat-icon {
-				margin-right: 16px;
+			a {
+				height: 48px;
 			}
 
-			.bottomStick {
-				position: absolute;
-				width: 100%;
-				bottom: 40px;
+			a.active-item {
+				background: #eee;
 			}
-			.bottomRelative {
-				position: relative;
+
+			.mat-subheader {
+				margin: 0;
 			}
 		}
 
 		mat-sidenav-content {
 			position: relative;
 			overflow-x: hidden;
+			overflow-y: scroll;
+			scroll-behavior: smooth;
+			scroll-padding: 32px 0 0 0;
 
-			#container {
-				margin: 0 auto;
-				max-width: 1280px;
-				width: 90%;
-				padding: 16px;
-			}
-
-			@media only screen and (min-width: 601px) {
-				#container {
-					width: 85%;
-				}
-			}
-			@media only screen and (min-width: 993px) {
-				#container {
-					width: 70%;
-				}
+			main {
+				position: relative;
+				top: 0;
+				left: 0;
+				right: 0;
+				box-sizing: border-box;
+				width: calc(100% - 64px);
+				height: auto;
+				margin: 32px;
 			}
 		}
 	}

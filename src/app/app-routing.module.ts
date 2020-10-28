@@ -1,14 +1,16 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AboutComponent } from './about/about.component';
-import { HomeComponent } from './home/home.component';
-import { PageNotFoundComponentComponent } from './page-not-found-component/page-not-found-component.component';
+import { items } from 'src/config';
+import { getRoutes } from 'src/utils/routes';
+import { PageNotFound } from './pages';
 
 const routes: Routes = [
-	{ path: '', component: HomeComponent },
-	{ path: 'home', redirectTo: '' },
-	{ path: 'about', component: AboutComponent },
-	{ path: '**', component: PageNotFoundComponentComponent },
+	...getRoutes(items),
+	{ path: '', loadChildren: () => import('./blog/blog.module').then(m => m.BlogModule) },
+	{
+		path: '**',
+		component: PageNotFound,
+	},
 ];
 
 @NgModule({
