@@ -12,7 +12,10 @@
 		<meta charset="utf-8" />
 		<title>Portfolio S7 – Max Altena</title>
 		<base href="/" />
-		<meta name="keywords" content="portfolio,s7,semester 7,max,altena,max altena,maxaltena" />
+		<meta
+			name="keywords"
+			content="portfolio,s7,semester 7,max,altena,max altena,maxaltena"
+		/>
 		<meta
 			name="description"
 			content="The porfolio of Max Altena for Semester 7 which was a minor named Digital Experience Design."
@@ -34,7 +37,10 @@
 		<meta name="reply-to" content="max@maxaltena.com" />
 		<meta name="owner" content="Max Altena" />
 		<meta name="url" content="https://portfolio.maxaltena.com/S7/" />
-		<meta name="identifier-URL" content="https://portfolio.maxaltena.com/S7/" />
+		<meta
+			name="identifier-URL"
+			content="https://portfolio.maxaltena.com/S7/"
+		/>
 		<meta name="rating" content="General" />
 		<meta name="revisit-after" content="7 days" />
 		<meta http-equiv="Expires" content="0" />
@@ -50,17 +56,26 @@
 			content="The porfolio of Max Altena for Semester 7 which was a minor named Digital Experience Design."
 		/>
 		<meta name="og:email" content="max@maxaltena.com" />
-		<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes" />
+		<meta
+			name="viewport"
+			content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes"
+		/>
 		<meta name="mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="apple-touch-fullscreen" content="yes" />
 		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
 		<meta name="mssmarttagspreventparsing" content="true" />
 		<meta http-equiv="X-UA-Compatible" content="chrome=1" />
-		<meta name="msapplication-starturl" content="https://portfolio.maxaltena.com/S7/" />
+		<meta
+			name="msapplication-starturl"
+			content="https://portfolio.maxaltena.com/S7/"
+		/>
 		<meta name="msapplication-navbutton-color" content="black" />
 		<meta name="application-name" content="Portfolio S7 – Max Altena" />
-		<meta name="msapplication-tooltip" content="Launch Portfolio S7 – Max Altena" />
+		<meta
+			name="msapplication-tooltip"
+			content="Launch Portfolio S7 – Max Altena"
+		/>
 		<link
 			rel="shortcut icon"
 			href="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/microsoft/209/keycap-digit-seven_37-fe0f-20e3.png"
@@ -73,7 +88,20 @@
 			rel="apple-touch-startup-image"
 			href="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/microsoft/209/keycap-digit-seven_37-fe0f-20e3.png"
 		/>
-		<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-102319824-8"></script>
+		<link
+			href="https://fonts.googleapis.com/icon?family=Material+Icons"
+			rel="stylesheet"
+		/>
+		<link rel="manifest" href="manifest.webmanifest" />
+		<meta name="theme-color" content="#3f51b5" />
+		<link
+			href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap"
+			rel="stylesheet"
+		/>
+		<script
+			async=""
+			src="https://www.googletagmanager.com/gtag/js?id=UA-102319824-8"
+		></script>
 		<script>
 			window.dataLayer = window.dataLayer || [];
 			function gtag() {
@@ -82,14 +110,24 @@
 			gtag('js', new Date());
 			gtag('config', 'UA-102319824-8');
 		</script>
-		<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&amp;display=swap" rel="stylesheet" />
-		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-		<link rel="manifest" href="manifest.webmanifest" />
-		<meta name="theme-color" content="#3f51b5" />
-		<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet" />
+		<script>
+			window.app = {
+				gitHash: '${gitHash}',
+				gitHashShort: '${gitHashShort}',
+				gitTimestamp: '${gitTimestamp}',
+				gitAuthorName: '${gitAuthorName}',
+				gitAuthorEmail: '${gitAuthorEmail}',
+				gitBranch: '${gitBranch}',
+				gitMessage: '${gitMessage}',
+				buildTime: '${buildTime}',
+			};
+		</script>
 	</head>
 	<body class="mat-typography">
 		<app-portfolio-s7></app-portfolio-s7>
-		<noscript>Please enable JavaScript to continue using this application.</noscript>
+		<noscript
+			>Please enable JavaScript to continue using this
+			application.</noscript
+		>
 	</body>
 </html>

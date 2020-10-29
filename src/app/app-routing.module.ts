@@ -1,17 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { items } from 'src/config';
+import config from 'src/config';
 import { getRoutes } from 'src/utils/routes';
-import { PageNotFoundComponent } from './pages';
 
-const routes: Routes = [
-	...getRoutes(items),
-	{ path: '', loadChildren: () => import('./blog/blog.module').then(m => m.BlogModule) },
-	{
-		path: '**',
-		component: PageNotFoundComponent,
-	},
-];
+const routes: Routes = getRoutes(config.items);
+
 
 @NgModule({
 	imports: [RouterModule.forRoot(routes)],

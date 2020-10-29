@@ -1,17 +1,17 @@
 {
-  "name": "Portfolio S7 – Max Altena",
-  "short_name": "Portfolio S7",
-  "theme_color": "#3f51b5",
-  "background_color": "#fafafa",
-  "display": "standalone",
-  "scope": "./",
-  "start_url": "./",
-  "icons": [
-    {
-      "src": "assets/icons/icon-240x240.png",
-      "sizes": "240x240",
-      "type": "image/png",
-      "purpose": "maskable any"
-    }
-  ]
+	"name": "Portfolio S7 – Max Altena",
+	"short_name": "Portfolio S7",
+	"theme_color": "#3f51b5",
+	"background_color": "#fafafa",
+	"display": "standalone",
+	"scope": "./",
+	"start_url": "./",
+	"icons": [
+		{
+			"src": "assets/icons/icon-240x240.png",
+			"sizes": "240x240",
+			"type": "image/png",
+			"purpose": "maskable any"
+		}
+	]
 }

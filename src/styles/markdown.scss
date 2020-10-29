@@ -1,19 +1,16 @@
 p {
 	line-height: 1.62;
+	letter-spacing: 0.16px;
 }
 
 h1 {
-	font-size: 3rem;
-	font-weight: bold;
+	font-size: 40px;
+	font-weight: 900;
+	line-height: 40px;
+	letter-spacing: 0.08px;
+	margin: 16px 0;
+}
 
-	&::before {
-		content: '# ';
-		opacity: 0.6;
-		transition: opacity 200ms ease-in-out;
-
-		&:hover,
-		&:active {
-			opacity: 0.8;
-		}
-	}
+::ng-deep .mat-chip-list-wrapper {
+	margin: 16px -4px !important;
 }

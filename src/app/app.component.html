@@ -10,47 +10,104 @@
 	<mat-sidenav-container>
 		<mat-sidenav #sidenav mode="side" [(opened)]="opened">
 			<mat-nav-list>
-				<div *ngFor="let navItem of navList">
-					<div [ngSwitch]="navItem.pages.length">
-						<div *ngSwitchCase="'0'">
-							<a
-								mat-list-item
-								routerLink="{{ navItem.link }}"
-								routerLinkActive="active-item"
-								[routerLinkActiveOptions]="{ exact: true }"
+				<span *ngFor="let item of items; trackBy: identifyer">
+					<span *ngIf="item.children && item.children.length > 0">
+						<mat-accordion>
+							<mat-expansion-panel
+								[expanded]="currentExpand === item.path"
+								(opened)="setCurrentExpand(item.path)"
 							>
-								<mat-icon mat-list-icon *ngIf="navItem.icon">{{ navItem.icon }}</mat-icon>
-								<div mat-list-icon *ngIf="navItem.emoji">{{ navItem.emoji }}</div>
-								<div mat-line>{{ navItem.heading }}</div>
-							</a>
-						</div>
-						<div *ngSwitchDefault>
-							<div mat-subheader>
-								<mat-icon mat-list-icon *ngIf="navItem.icon">{{ navItem.icon }}</mat-icon>
-								<div mat-list-icon *ngIf="navItem.emoji">{{ navItem.emoji }}</div>
-								<div mat-line>{{ navItem.heading }}</div>
-							</div>
-							<div *ngFor="let navPage of navItem.pages">
-								<a
-									mat-list-item
-									routerLink="{{ navItem.link }}{{ navPage.link }}"
-									routerLinkActive="active-item"
-									[routerLinkActiveOptions]="{ exact: true }"
+								<mat-expansion-panel-header
+									[collapsedHeight]="'48px'"
+									[expandedHeight]="'48px'"
 								>
-									<mat-icon mat-list-icon *ngIf="navPage.icon">{{ navPage.icon }}</mat-icon>
-									<div mat-list-icon *ngIf="navPage.emoji">{{ navPage.emoji }}</div>
-									<div mat-line>{{ navPage.title }}</div>
-								</a>
+									<mat-list-item
+										routerLink="{{ item.path }}"
+										routerLinkActive="active-item"
+										[routerLinkActiveOptions]="{
+											exact: true
+										}"
+										*ngIf="item.includeInNavigation"
+									>
+										<mat-icon
+											mat-list-icon
+											*ngIf="item.icon"
+											>{{ item.icon }}</mat-icon
+										>
+										<div mat-list-icon *ngIf="item.emoji">
+											{{ item.emoji }}
+										</div>
+										<div mat-line class="bold">
+											{{ item.title }}
+										</div>
+									</mat-list-item>
+								</mat-expansion-panel-header>
+								<span *ngFor="let child of item.children">
+									<mat-list-item
+										routerLink="{{ item.path }}/{{
+											child.path
+										}}"
+										routerLinkActive="active-item"
+										[routerLinkActiveOptions]="{
+											exact: true
+										}"
+										*ngIf="item.includeInNavigation"
+									>
+										<mat-icon
+											mat-list-icon
+											*ngIf="child.icon"
+											>{{ child.icon }}</mat-icon
+										>
+										<div mat-list-icon *ngIf="child.emoji">
+											{{ child.emoji }}
+										</div>
+										<div mat-line>{{ child.title }}</div>
+									</mat-list-item>
+								</span>
+							</mat-expansion-panel>
+						</mat-accordion>
+					</span>
+					<span *ngIf="!item.children || item.children.length === 0">
+						<mat-list-item
+							routerLink="{{ item.path }}"
+							routerLinkActive="active-item"
+							[routerLinkActiveOptions]="{ exact: true }"
+							*ngIf="item.includeInNavigation"
+						>
+							<mat-icon mat-list-icon *ngIf="item.icon">{{
+								item.icon
+							}}</mat-icon>
+							<div mat-list-icon *ngIf="item.emoji">
+								{{ item.emoji }}
 							</div>
-						</div>
-					</div>
-				</div>
+							<div mat-line class="bold">{{ item.title }}</div>
+						</mat-list-item>
+					</span>
+				</span>
 			</mat-nav-list>
+			<span *ngIf="git.gitHash && git.gitHashShort">
+				<mat-divider></mat-divider>
+				<mat-list class="no-padding">
+					<mat-list-item class="height-64 flex-column">
+						<p class="mat-small">Last commit on GitHub:</p>
+						<p class="mat-small">
+							<a
+								href="https://github.com/MaxAltena/Portfolio-S7/commit/{{
+									git.gitHash
+								}}"
+								target="_blank"
+								>{{ git.gitHashShort }}</a
+							>
+							({{ timeAgo }})
+						</p>
+					</mat-list-item>
+				</mat-list>
+			</span>
 		</mat-sidenav>
 		<mat-sidenav-content>
-			<main [@routeAnimations]="prepareRoute(outlet)">
+			<div id="content-window" [@routeAnimations]="prepareRoute(outlet)">
 				<router-outlet #outlet="outlet"></router-outlet>
-			</main>
+			</div>
 		</mat-sidenav-content>
 	</mat-sidenav-container>
 

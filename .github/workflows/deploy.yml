@@ -39,9 +39,9 @@ jobs:
           ftp-server: ${{ secrets.FTP_SERVER }}${{ secrets.FTP_PATH }}
           ftp-username: ${{ secrets.FTP_USERNAME }}
           ftp-password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: dist/static/
+          local-dir: dist/Portfolio-S7/
       - name: Archive build artifact
         uses: actions/upload-artifact@master
         with:
           name: build
-          path: dist/static/
+          path: dist/Portfolio-S7/

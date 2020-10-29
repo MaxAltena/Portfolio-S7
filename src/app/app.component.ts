@@ -1,21 +1,9 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, RouterOutlet } from '@angular/router';
+import config from 'src/config';
+import { getGitVariables } from 'src/utils/git-config';
 import { fadeAnimation } from 'src/utils/route-animations';
-
-interface NavItem {
-	heading: string;
-	link: string;
-	icon?: string;
-	emoji?: string;
-	pages: SubNavItem[];
-}
-
-interface SubNavItem {
-	title: string;
-	link: string;
-	icon?: string;
-	emoji?: string;
-}
+import { formatTimeAgo } from 'src/utils/time-formatter';
 
 @Component({
 	selector: 'app-portfolio-s7',
@@ -24,43 +12,30 @@ interface SubNavItem {
 	animations: [fadeAnimation],
 })
 export class AppComponent {
-	title = 'Portfolio S7 – Max Altena';
+	title = config.title;
 	opened = true;
-	navList: NavItem[] = [
-		{ heading: 'Home', link: '/', icon: 'home', pages: [] },
-		{ heading: 'About', link: '/about', icon: 'person', pages: [] },
-		{
-			heading: 'Human Centered Design',
-
-			link: '/human-centered-design',
-			pages: [{ title: 'Design Probes', icon: 'home', link: '/design-probes' }],
-		},
-		{
-			heading: 'Critical Design',
-			link: '/critical-design',
-			pages: [{ title: 'Personal Manifesto', icon: 'home', link: '/personal-manifesto' }],
-		},
-		{
-			heading: 'Story Creation',
-
-			link: '/story-creation',
-			pages: [{ title: 'Story Telling', icon: 'home', link: '/story-telling' }],
-		},
-		{
-			heading: 'Media Theory',
-
-			link: '/media-theory',
-			pages: [{ title: 'Replika', icon: 'home', link: '/replika' }],
-		},
-		{
-			heading: 'Other',
-			emoji: '😇',
-			link: '/other',
-			pages: [{ title: 'VEGA Collab', emoji: '😪', link: '/vega-collab' }],
-		},
-	];
+	git = getGitVariables();
+	items = config.items;
+	timeAgo = formatTimeAgo(new Date(Number(this.git.gitTimestamp) * 1000));
+	currentExpand = '';
 
 	prepareRoute(outlet: RouterOutlet): ActivatedRoute | '' {
 		return outlet.isActivated ? outlet.activatedRoute : '';
 	}
+
+	setCurrentExpand(current: string): void {
+		this.currentExpand = current;
+	}
+
+	identifyer = (index: number, item: any) => `${index}-${item.id}`;
+
+	// TODO: Currently doesnt work as expected https://github.com/angular/components/issues/20517
+	// constructor(router: Router) {
+	// 	router.events.subscribe(() => {
+	// 		const paths = router.url.split('/');
+	// 		if (paths[1] !== this.currentExpand) {
+	// 			this.setCurrentExpand(paths[1]);
+	// 		}
+	// 	});
+	// }
 }

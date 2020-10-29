@@ -1,3 +1,5 @@
+@import '~@angular/material/theming';
+
 #app {
 	min-height: 100vh;
 	height: 100vh;
@@ -24,16 +26,71 @@
 			width: 250px;
 			padding-bottom: 32px;
 
-			a {
-				height: 48px;
+			.no-padding {
+				padding: 0;
 			}
 
-			a.active-item {
+			::ng-deep .flex-column .mat-list-item-content {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: flex-start;
+			}
+
+			.height-64 {
+				height: 64px;
+			}
+
+			p {
+				margin: 0;
+				padding: 0;
+			}
+
+			a,
+			mat-list-item {
+				height: 48px;
+				padding: 0;
+				margin: 0;
+			}
+
+			a.active-item,
+			mat-list-item.active-item {
 				background: #eee;
 			}
 
-			.mat-subheader {
-				margin: 0;
+			::ng-deep .bold.mat-line {
+				font-weight: bold !important;
+			}
+
+			mat-expansion-panel {
+				@include mat-elevation(0);
+				border-radius: 0px;
+
+				mat-expansion-panel-header {
+					padding: 0;
+
+					::ng-deep .mat-list-item-content {
+						padding-right: 40px;
+					}
+
+					::ng-deep .mat-expansion-indicator {
+						position: absolute;
+						right: 16px;
+						top: 12px;
+						bottom: 12px;
+						pointer-events: none;
+					}
+				}
+
+				::ng-deep .mat-expansion-panel-body {
+					padding: 0;
+					margin: 0;
+				}
+			}
+
+			mat-card {
+				@include mat-elevation(4);
+				margin: 8px;
 			}
 		}
 
@@ -44,15 +101,21 @@
 			scroll-behavior: smooth;
 			scroll-padding: 32px 0 0 0;
 
-			main {
+			.content-window {
 				position: relative;
-				top: 0;
 				left: 0;
+				top: 0;
 				right: 0;
-				box-sizing: border-box;
-				width: calc(100% - 64px);
+				width: 100%;
 				height: auto;
-				margin: 32px;
+
+				> * {
+					position: relative;
+					left: 0;
+					top: 0;
+					right: 0;
+					width: 100%;
+				}
 			}
 		}
 	}

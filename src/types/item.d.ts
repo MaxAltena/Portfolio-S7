@@ -1,12 +1,13 @@
-import { Type } from "@angular/core";
+import { Type } from '@angular/core';
 
 interface Item extends BaseItem {
-	pages?: BaseItem[];
+	children: BaseItem[];
 }
 
 interface BaseItem {
+	id: number;
 	path: string;
-	component: Type<any>;
+	component?: Type<any>;
 	includeInRoutes: boolean;
 	includeInNavigation: boolean;
 	title: string;

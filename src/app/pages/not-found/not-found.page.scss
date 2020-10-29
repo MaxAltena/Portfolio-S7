@@ -1,5 +1,8 @@
-@use '../../../styles/markdown.scss';
+@use '../../../styles/page.scss';
 
-.center {
-	text-align: center;
+:host {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: auto;
 }
