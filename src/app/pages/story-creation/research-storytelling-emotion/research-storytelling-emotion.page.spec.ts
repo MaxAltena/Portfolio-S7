@@ -13,7 +13,9 @@ describe('PageResearchStorytellingEmotionComponent', () => {
 	});
 
 	beforeEach(() => {
-		fixture = TestBed.createComponent(PageResearchStorytellingEmotionComponent);
+		fixture = TestBed.createComponent(
+			PageResearchStorytellingEmotionComponent
+		);
 		component = fixture.componentInstance;
 		fixture.detectChanges();
 	});

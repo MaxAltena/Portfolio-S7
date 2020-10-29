@@ -5,7 +5,6 @@ import { getRoutes } from 'src/utils/routes';
 
 const routes: Routes = getRoutes(config.items);
 
-
 @NgModule({
 	imports: [RouterModule.forRoot(routes)],
 	exports: [RouterModule],

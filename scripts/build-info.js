@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+/* eslint-disable */
 // Based on: https://gitlab.com/rippell/ngx-build-info/-/blob/master/ngx-build-info.js
 
 const fs = require('fs'),

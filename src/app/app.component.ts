@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, RouterOutlet } from '@angular/router';
 import config from 'src/config';
+import { Item } from 'src/types/item';
 import { getGitVariables } from 'src/utils/git-config';
 import { fadeAnimation } from 'src/utils/route-animations';
 import { formatTimeAgo } from 'src/utils/time-formatter';
@@ -27,7 +28,7 @@ export class AppComponent {
 		this.currentExpand = current;
 	}
 
-	identifyer = (index: number, item: any) => `${index}-${item.id}`;
+	identifyer = (index: number, item: Item): string => `${index}-${item.id}`;
 
 	// TODO Currently doesnt work as expected https://github.com/angular/components/issues/20517
 	// constructor(router: Router) {

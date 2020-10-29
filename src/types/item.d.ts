@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 import { Type } from '@angular/core';
 
 interface Item extends BaseItem {

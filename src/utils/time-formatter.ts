@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 // @ts-ignore
 const formatter = new Intl.RelativeTimeFormat('en', {
 	localeMatcher: 'best fit',
@@ -15,7 +16,7 @@ const DIVISIONS = [
 	{ amount: Number.POSITIVE_INFINITY, name: 'years' },
 ];
 
-export const formatTimeAgo = (date: Date) => {
+export const formatTimeAgo = (date: Date): string => {
 	const now = new Date();
 	let duration = (date.valueOf() - now.valueOf()) / 1000;
 	let result;
