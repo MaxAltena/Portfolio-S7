@@ -1,6 +1,6 @@
 @import '~@angular/material/theming';
 
-#app {
+:host {
 	min-height: 100vh;
 	height: 100vh;
 	overflow-y: hidden;
