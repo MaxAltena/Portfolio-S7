@@ -1,3 +1,5 @@
+/* tslint:disable */
+
 import { PageHomeComponent } from './home/home.page';
 import { PageAboutComponent } from './about/about.page';
 import { PageNotFoundComponent } from './not-found/not-found.page';
