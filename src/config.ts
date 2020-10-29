@@ -20,6 +20,8 @@ import {
 	PageADayWithoutMyPhoneComponent,
 	PageSocialAnalysisComponent,
 	PageMyAIFriendComponent,
+	PageGroupContributionComponent,
+	PageStakeholderProfilesComponent,
 } from 'src/app/pages';
 
 const items: Item[] = [
@@ -67,6 +69,14 @@ const items: Item[] = [
 				path: 'print-house-interview',
 				component: PagePrintHouseInterviewComponent,
 				title: '2D print house interview',
+				includeInRoutes: true,
+				includeInNavigation: true,
+			},
+			{
+				id: 103,
+				path: 'stakeholder-profiles',
+				component: PageStakeholderProfilesComponent,
+				title: 'Stakeholder Profiles',
 				includeInRoutes: true,
 				includeInNavigation: true,
 			},
@@ -190,6 +200,14 @@ const items: Item[] = [
 				path: 'vega-collab',
 				component: PageVegaCollabComponent,
 				title: 'VEGA Collab',
+				includeInRoutes: true,
+				includeInNavigation: true,
+			},
+			{
+				id: 502,
+				path: 'group-contribution',
+				component: PageGroupContributionComponent,
+				title: 'Group Contribution',
 				includeInRoutes: true,
 				includeInNavigation: true,
 			},

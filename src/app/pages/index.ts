@@ -17,15 +17,18 @@ export const generalPages = [
 import { PageHumanCenteredDesignComponent } from './human-centered-design/human-centered-design.page';
 import { PageDesignProbesComponent } from './human-centered-design/design-probes/design-probes.page';
 import { PagePrintHouseInterviewComponent } from './human-centered-design/print-house-interview/print-house-interview.page';
+import { PageStakeholderProfilesComponent } from './human-centered-design/stakeholder-profiles/stakeholder-profiles.page';
 
 export * from './human-centered-design/human-centered-design.page';
 export * from './human-centered-design/design-probes/design-probes.page';
 export * from './human-centered-design/print-house-interview/print-house-interview.page';
+export * from './human-centered-design/stakeholder-profiles/stakeholder-profiles.page';
 
 export const hcdPages = [
 	PageHumanCenteredDesignComponent,
 	PageDesignProbesComponent,
 	PagePrintHouseInterviewComponent,
+	PageStakeholderProfilesComponent,
 ];
 
 import { PageCriticalDesignComponent } from './critical-design/critical-design.page';
@@ -81,11 +84,17 @@ export const mtPages = [
 
 import { PageOtherComponent } from './other/other.page';
 import { PageVegaCollabComponent } from './other/vega-collab/vega-collab.page';
+import { PageGroupContributionComponent } from './other/group-contribution/group-contribution.page';
 
 export * from './other/other.page';
 export * from './other/vega-collab/vega-collab.page';
+export * from './other/group-contribution/group-contribution.page';
 
-export const otherPages = [PageOtherComponent, PageVegaCollabComponent];
+export const otherPages = [
+	PageOtherComponent,
+	PageVegaCollabComponent,
+	PageGroupContributionComponent,
+];
 
 export default [
 	...generalPages,
