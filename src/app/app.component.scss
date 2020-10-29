@@ -10,6 +10,8 @@
 	mat-toolbar {
 		padding: 16px;
 
+		user-select: none;
+
 		.margin-right-16 {
 			margin-right: 16px;
 		}
@@ -25,6 +27,8 @@
 		mat-sidenav {
 			width: 250px;
 			padding-bottom: 32px;
+
+			user-select: none;
 
 			.no-padding {
 				padding: 0;

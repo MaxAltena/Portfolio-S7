@@ -4,5 +4,6 @@ div.top {
 
 	::ng-deep .mat-chip-list-wrapper {
 		margin: 16px -4px !important;
+		user-select: none;
 	}
 }

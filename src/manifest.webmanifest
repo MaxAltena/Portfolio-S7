@@ -3,9 +3,9 @@
 	"short_name": "Portfolio S7",
 	"theme_color": "#3f51b5",
 	"background_color": "#fafafa",
-	"display": "standalone",
-	"scope": "./",
-	"start_url": "./",
+	"display": "minimal-ui",
+	"scope": "https://portfolio.maxaltena.com/S7/",
+	"start_url": "https://portfolio.maxaltena.com/S7/",
 	"icons": [
 		{
 			"src": "assets/icons/icon-240x240.png",

@@ -18,6 +18,8 @@ header {
 	}
 
 	.back-link {
+		user-select: none;
+
 		mat-icon {
 			margin-right: 8px;
 		}

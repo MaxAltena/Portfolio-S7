@@ -94,6 +94,6 @@
 	},
 	"lint-staged": {
 		"*": "npm run prettier:fix",
-		"*.ts": "npm run eslint:fix"
+		"*.ts": "npm run eslint:fix && npm run lint"
 	}
 }

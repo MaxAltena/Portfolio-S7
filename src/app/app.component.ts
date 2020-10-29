@@ -29,7 +29,7 @@ export class AppComponent {
 
 	identifyer = (index: number, item: any) => `${index}-${item.id}`;
 
-	// TODO: Currently doesnt work as expected https://github.com/angular/components/issues/20517
+	// TODO Currently doesnt work as expected https://github.com/angular/components/issues/20517
 	// constructor(router: Router) {
 	// 	router.events.subscribe(() => {
 	// 		const paths = router.url.split('/');
