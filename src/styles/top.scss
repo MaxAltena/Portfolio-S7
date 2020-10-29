@@ -1,12 +1,6 @@
 div.top {
 	width: 100%;
 	height: auto;
-	h1 {
-	}
-
-	div.tags {
-		min-height: 64px;
-	}
 
 	::ng-deep .mat-chip-list-wrapper {
 		margin: 16px -4px !important;
