@@ -1,0 +1,35 @@
+<mat-chip-list>
+	<div *ngFor="let chip of chips">
+		<div
+			*ngIf="
+				chip === 'Human Centered Design' ||
+				chip === 'Critical Design' ||
+				chip === 'Media Theory' ||
+				chip === 'Story Creation' ||
+				chip === 'Other'
+			"
+		>
+			<mat-chip color="primary" selected>{{ chip }}</mat-chip>
+		</div>
+		<div
+			*ngIf="
+				chip === 'Personal' ||
+				chip === 'Group' ||
+				chip === 'Additive Industries'
+			"
+		>
+			<mat-chip color="accent" selected>{{ chip }}</mat-chip>
+		</div>
+		<div
+			*ngIf="
+				chip === 'Concept' ||
+				chip === 'Assignment' ||
+				chip === 'Subject' ||
+				chip === 'Research' ||
+				chip === 'Project'
+			"
+		>
+			<mat-chip>{{ chip }}</mat-chip>
+		</div>
+	</div>
+</mat-chip-list>

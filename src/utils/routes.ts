@@ -1,12 +1,31 @@
 import { Routes } from '@angular/router';
-import { BaseItem, Item } from 'src/types/item';
+import {
+	PageDynamicComponent,
+	PageNotFoundComponent,
+	PagesType,
+} from 'src/app/pages';
+import { BaseItem, Item } from 'src/types';
+
+const getComponent = (component: string): PagesType => {
+	switch (component) {
+		case 'not-found':
+			return PageNotFoundComponent;
+		case 'default':
+		case 'iframe':
+		default:
+			return PageDynamicComponent;
+	}
+};
 
 export const getRoutes = (items: Item[]): Routes => {
 	const routes: Routes = [];
 
 	items.forEach((item: Item) => {
-		if (item.includeInRoutes && item.component) {
-			routes.push({ path: item.path, component: item.component });
+		if (item.includeInRoutes && item.type) {
+			routes.push({
+				path: item.path,
+				component: getComponent(item.type),
+			});
 		}
 
 		if (item.redirects) {
@@ -20,14 +39,14 @@ export const getRoutes = (items: Item[]): Routes => {
 
 		if (item.children) {
 			item.children.forEach((child: BaseItem) => {
-				if (child.includeInRoutes && child.component) {
+				if (child.includeInRoutes && child.type) {
 					routes.push({
 						path: child.path,
-						component: child.component,
+						component: getComponent(child.type),
 					});
 					routes.push({
 						path: `${item.path}/${child.path}`,
-						component: child.component,
+						component: getComponent(child.type),
 					});
 				}
 

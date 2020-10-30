@@ -9,8 +9,8 @@
 <mat-sidenav-container>
 	<mat-sidenav #sidenav mode="side" [(opened)]="opened">
 		<mat-nav-list>
-			<span *ngFor="let item of items; trackBy: identifyer">
-				<span *ngIf="item.children && item.children.length > 0">
+			<div *ngFor="let item of items">
+				<div *ngIf="item.children && item.children.length > 0">
 					<mat-accordion>
 						<mat-expansion-panel
 							[expanded]="currentExpand === item.path"
@@ -39,7 +39,7 @@
 									</div>
 								</mat-list-item>
 							</mat-expansion-panel-header>
-							<span *ngFor="let child of item.children">
+							<div *ngFor="let child of item.children">
 								<mat-list-item
 									routerLink="{{ item.path }}/{{
 										child.path
@@ -60,11 +60,11 @@
 									</div>
 									<div mat-line>{{ child.title }}</div>
 								</mat-list-item>
-							</span>
+							</div>
 						</mat-expansion-panel>
 					</mat-accordion>
-				</span>
-				<span *ngIf="!item.children || item.children.length === 0">
+				</div>
+				<div *ngIf="!item.children || item.children.length === 0">
 					<mat-list-item
 						routerLink="{{ item.path }}"
 						routerLinkActive="active-item"
@@ -79,10 +79,10 @@
 						</div>
 						<div mat-line class="bold">{{ item.title }}</div>
 					</mat-list-item>
-				</span>
-			</span>
+				</div>
+			</div>
 		</mat-nav-list>
-		<span *ngIf="git.gitHash && git.gitHashShort">
+		<div *ngIf="git.gitHash && git.gitHashShort">
 			<mat-divider></mat-divider>
 			<mat-list class="no-padding">
 				<mat-list-item class="height-80 flex-column selectable">
@@ -102,7 +102,7 @@
 					</p>
 				</mat-list-item>
 			</mat-list>
-		</span>
+		</div>
 	</mat-sidenav>
 	<mat-sidenav-content>
 		<div id="content-window" [@routeAnimations]="prepareRoute(outlet)">

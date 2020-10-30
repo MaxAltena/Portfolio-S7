@@ -1,0 +1,48 @@
+@use '../../../styles/page.scss';
+
+:host {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: auto;
+}
+
+.dynamic {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: auto;
+}
+
+.dynamic-iframe {
+	width: 100%;
+	height: auto;
+
+	.background {
+		position: absolute;
+		z-index: -1;
+		top: 32px;
+		right: 32px;
+		bottom: 32px;
+		left: 32px;
+		width: auto;
+		height: auto;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+
+		mat-progress-bar {
+			max-width: 400px;
+		}
+		p {
+			margin-top: 16px;
+			font-size: 18px;
+		}
+	}
+
+	iframe {
+		width: 100%;
+		min-height: calc(100vh - 64px);
+	}
+}

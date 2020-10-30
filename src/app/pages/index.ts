@@ -2,18 +2,20 @@
 
 import { PageHomeComponent } from './home/home.page';
 import { PageDynamicComponent } from './dynamic/dynamic.page';
-import { PageAboutComponent } from './about/about.page';
 import { PageNotFoundComponent } from './not-found/not-found.page';
 
 export * from './home/home.page';
 export * from './dynamic/dynamic.page';
-export * from './about/about.page';
 export * from './not-found/not-found.page';
+
+export type GeneralPagesType =
+	| typeof PageHomeComponent
+	| typeof PageDynamicComponent
+	| typeof PageNotFoundComponent;
 
 export const generalPages = [
 	PageHomeComponent,
 	PageDynamicComponent,
-	PageAboutComponent,
 	PageNotFoundComponent,
 ];
 
@@ -26,6 +28,12 @@ export * from './human-centered-design/human-centered-design.page';
 export * from './human-centered-design/design-probes/design-probes.page';
 export * from './human-centered-design/print-house-interview/print-house-interview.page';
 export * from './human-centered-design/stakeholder-profiles/stakeholder-profiles.page';
+
+export type HCDPagesType =
+	| typeof PageHumanCenteredDesignComponent
+	| typeof PageDesignProbesComponent
+	| typeof PagePrintHouseInterviewComponent
+	| typeof PageStakeholderProfilesComponent;
 
 export const hcdPages = [
 	PageHumanCenteredDesignComponent,
@@ -46,6 +54,13 @@ export * from './critical-design/personal-manifesto/personal-manifesto.page';
 export * from './critical-design/concepts/concepts.page';
 export * from './critical-design/concept-digital-detox/concept-digital-detox.page';
 
+export type CDPagesType =
+	| typeof PageCriticalDesignComponent
+	| typeof PageCriticalProblemsComponent
+	| typeof PagePersonalManifestoComponent
+	| typeof PageConceptsComponent
+	| typeof PageConceptDigitalDetoxComponent;
+
 export const cdPages = [
 	PageCriticalDesignComponent,
 	PageCriticalProblemsComponent,
@@ -64,6 +79,12 @@ export * from './story-creation/pecha-kucha/pecha-kucha.page';
 export * from './story-creation/research-storytelling-emotion/research-storytelling-emotion.page';
 export * from './story-creation/protaganist/protaganist.page';
 
+export type SCPagesType =
+	| typeof PageStoryCreationComponent
+	| typeof PagePechaKuchaComponent
+	| typeof PageResearchStorytellingEmotionComponent
+	| typeof PageProtaganistComponent;
+
 export const scPages = [
 	PageStoryCreationComponent,
 	PagePechaKuchaComponent,
@@ -81,6 +102,12 @@ export * from './media-theory/a-day-without-my-phone/a-day-without-my-phone.page
 export * from './media-theory/social-analysis/social-analysis.page';
 export * from './media-theory/my-ai-friend/my-ai-friend.page';
 
+export type MTPagesType =
+	| typeof PageMediaTheoryComponent
+	| typeof PageADayWithoutMyPhoneComponent
+	| typeof PageSocialAnalysisComponent
+	| typeof PageMyAIFriendComponent;
+
 export const mtPages = [
 	PageMediaTheoryComponent,
 	PageADayWithoutMyPhoneComponent,
@@ -96,11 +123,24 @@ export * from './other/other.page';
 export * from './other/vega-collab/vega-collab.page';
 export * from './other/group-contribution/group-contribution.page';
 
+export type OtherPagesType =
+	| typeof PageOtherComponent
+	| typeof PageVegaCollabComponent
+	| typeof PageGroupContributionComponent;
+
 export const otherPages = [
 	PageOtherComponent,
 	PageVegaCollabComponent,
 	PageGroupContributionComponent,
 ];
+
+export type PagesType =
+	| GeneralPagesType
+	| HCDPagesType
+	| CDPagesType
+	| SCPagesType
+	| MTPagesType
+	| OtherPagesType;
 
 export default [
 	...generalPages,

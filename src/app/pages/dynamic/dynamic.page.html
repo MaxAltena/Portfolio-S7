@@ -1,1 +1,113 @@
-<p>dynamic works!</p>
+<div *ngIf="item" [ngSwitch]="item.type">
+	<div *ngSwitchCase="'iframe'" class="dynamic dynamic-iframe">
+		<div class="background">
+			<mat-progress-bar mode="indeterminate"></mat-progress-bar>
+			<p>Loading {{ item.title.toLowerCase() }} page...</p>
+		</div>
+		<iframe [src]="getIframeURL()" frameborder="0"></iframe>
+	</div>
+
+	<div *ngSwitchDefault>
+		<header>
+			<a
+				*ngIf="parent"
+				mat-button
+				routerLink="../"
+				color="accent"
+				class="top-left back-link"
+				><mat-icon>arrow_back</mat-icon>
+				<span>{{ parent.title }}</span></a
+			>
+		</header>
+
+		<main>
+			<div class="margin-x">
+				<div class="container">
+					<div class="top">
+						<h1>{{ getHeading() }}</h1>
+						<div class="chip-list">
+							<app-chip-list
+								*ngIf="item.pageInfo && item.pageInfo.chips"
+								[chips]="item.pageInfo.chips"
+							></app-chip-list>
+						</div>
+					</div>
+
+					<div class="content">
+						<div [ngSwitch]="item.path">
+							<app-page-home *ngSwitchCase="''"></app-page-home>
+							<app-page-critical-design
+								*ngSwitchCase="'critical-design'"
+							></app-page-critical-design>
+							<app-page-concept-digital-detox
+								*ngSwitchCase="'concept-digital-detox'"
+							></app-page-concept-digital-detox>
+							<app-page-concepts
+								*ngSwitchCase="'concepts'"
+							></app-page-concepts>
+							<app-page-critical-problems
+								*ngSwitchCase="'critical-problems'"
+							></app-page-critical-problems>
+							<app-page-personal-manifesto
+								*ngSwitchCase="'personal-manifesto'"
+							></app-page-personal-manifesto>
+							<app-page-human-centered-design
+								*ngSwitchCase="'human-centered-design'"
+							></app-page-human-centered-design>
+							<app-page-design-probes
+								*ngSwitchCase="'design-probes'"
+							></app-page-design-probes>
+							<app-page-print-house-interview
+								*ngSwitchCase="'print-house-interview'"
+							></app-page-print-house-interview>
+							<app-page-stakeholder-profiles
+								*ngSwitchCase="'stakeholder-profiles'"
+							></app-page-stakeholder-profiles>
+							<app-page-media-theory
+								*ngSwitchCase="'media-theory'"
+							></app-page-media-theory>
+							<app-page-a-day-without-my-phone
+								*ngSwitchCase="'a-day-without-my-phone'"
+							></app-page-a-day-without-my-phone>
+							<app-page-my-ai-friend
+								*ngSwitchCase="'my-ai-friend'"
+							></app-page-my-ai-friend>
+							<app-page-social-analysis
+								*ngSwitchCase="'social-analysis'"
+							></app-page-social-analysis>
+							<app-page-story-creation
+								*ngSwitchCase="'story-creation'"
+							></app-page-story-creation>
+							<app-page-pecha-kucha
+								*ngSwitchCase="'pecha-kucha'"
+							></app-page-pecha-kucha>
+							<app-page-protaganist
+								*ngSwitchCase="'protaganist'"
+							></app-page-protaganist>
+							<app-page-research-storytelling-emotion
+								*ngSwitchCase="'research-storytelling-emotion'"
+							></app-page-research-storytelling-emotion>
+							<app-page-other
+								*ngSwitchCase="'other'"
+							></app-page-other>
+							<app-page-vega-collab
+								*ngSwitchCase="'vega-collab'"
+							></app-page-vega-collab>
+							<app-page-group-contribution
+								*ngSwitchCase="'group-contribution'"
+							></app-page-group-contribution>
+
+							<app-page-not-found
+								*ngSwitchDefault
+							></app-page-not-found>
+						</div>
+					</div>
+
+					<div class="bottom"></div>
+				</div>
+			</div>
+		</main>
+
+		<footer></footer>
+	</div>
+</div>
