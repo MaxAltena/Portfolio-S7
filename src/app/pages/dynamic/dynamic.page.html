@@ -31,7 +31,14 @@
 								[chips]="item.pageInfo.chips"
 							></app-chip-list>
 						</div>
+						<blockquote
+							*ngIf="item.pageInfo && item.pageInfo.quote"
+						>
+							{{ item.pageInfo.quote }}
+						</blockquote>
 					</div>
+
+					<mat-divider class="margin-y"></mat-divider>
 
 					<div class="content">
 						<div [ngSwitch]="item.path">

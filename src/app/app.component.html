@@ -36,6 +36,7 @@
 						<mat-expansion-panel
 							[expanded]="currentExpand === item.path"
 							(opened)="setCurrentExpand(item.path)"
+							(closed)="setCurrentExpand(null)"
 						>
 							<mat-expansion-panel-header
 								[collapsedHeight]="'48px'"

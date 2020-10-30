@@ -38,6 +38,8 @@ const config: Config = {
 			includeInNavigation: true,
 			pageInfo: {
 				chips: ['Human Centered Design', 'Subject'],
+				quote:
+					"Sounds a bit egocentric doesn't it? But it is for the better of the user and in the end the human itself... That's what they say.",
 			},
 			children: [
 				{
@@ -50,6 +52,8 @@ const config: Config = {
 					pageInfo: {
 						includeEmojiInTitle: true,
 						chips: ['Human Centered Design', 'Duo', 'Assignment'],
+						quote:
+							"Creating probes to probe our own behaviour. Something I haven't done as of yet.",
 					},
 				},
 				{
@@ -66,6 +70,7 @@ const config: Config = {
 							'Additive Industries',
 							'Research',
 						],
+						quote: '...',
 					},
 				},
 				{
@@ -82,6 +87,7 @@ const config: Config = {
 							'Additive Industries',
 							'Research',
 						],
+						quote: '...',
 					},
 				},
 			],
@@ -95,6 +101,7 @@ const config: Config = {
 			includeInNavigation: true,
 			pageInfo: {
 				chips: ['Critical Design', 'Subject'],
+				quote: '...',
 			},
 			children: [
 				{
@@ -107,6 +114,7 @@ const config: Config = {
 					pageInfo: {
 						includeEmojiInTitle: true,
 						chips: ['Critical Design', 'Personal', 'Assignment'],
+						quote: '...',
 					},
 				},
 				{
@@ -119,6 +127,7 @@ const config: Config = {
 					pageInfo: {
 						includeEmojiInTitle: true,
 						chips: ['Critical Design', 'Personal', 'Assignment'],
+						quote: '...',
 					},
 				},
 				{
@@ -131,6 +140,7 @@ const config: Config = {
 					pageInfo: {
 						includeEmojiInTitle: true,
 						chips: ['Critical Design', 'Personal', 'Assignment'],
+						quote: '...',
 					},
 				},
 				{
@@ -143,6 +153,7 @@ const config: Config = {
 					pageInfo: {
 						includeEmojiInTitle: true,
 						chips: ['Critical Design', 'Personal', 'Concept'],
+						quote: '...',
 					},
 				},
 			],
@@ -156,6 +167,7 @@ const config: Config = {
 			includeInNavigation: true,
 			pageInfo: {
 				chips: ['Story Creation', 'Subject'],
+				quote: '...',
 			},
 			children: [
 				{
@@ -168,6 +180,7 @@ const config: Config = {
 					pageInfo: {
 						includeEmojiInTitle: true,
 						chips: ['Story Creation', 'Personal', 'Assignment'],
+						quote: '...',
 					},
 				},
 				{
@@ -185,6 +198,7 @@ const config: Config = {
 							'Research',
 							'Assignment',
 						],
+						quote: '...',
 					},
 				},
 				{
@@ -197,6 +211,7 @@ const config: Config = {
 					pageInfo: {
 						includeEmojiInTitle: true,
 						chips: ['Story Creation', 'Personal', 'Assignment'],
+						quote: '...',
 					},
 				},
 			],
@@ -210,6 +225,7 @@ const config: Config = {
 			includeInNavigation: true,
 			pageInfo: {
 				chips: ['Media Theory', 'Subject'],
+				quote: '...',
 			},
 			children: [
 				{
@@ -222,6 +238,7 @@ const config: Config = {
 					pageInfo: {
 						includeEmojiInTitle: true,
 						chips: ['Media Theory', 'Personal', 'Assignment'],
+						quote: '...',
 					},
 				},
 				{
@@ -234,6 +251,7 @@ const config: Config = {
 					pageInfo: {
 						includeEmojiInTitle: true,
 						chips: ['Media Theory', 'Personal', 'Assignment'],
+						quote: '...',
 					},
 				},
 				{
@@ -246,6 +264,7 @@ const config: Config = {
 					pageInfo: {
 						includeEmojiInTitle: true,
 						chips: ['Media Theory', 'Personal', 'Assignment'],
+						quote: '...',
 					},
 				},
 			],
@@ -258,6 +277,7 @@ const config: Config = {
 			includeInNavigation: true,
 			pageInfo: {
 				chips: ['Other', 'Subject'],
+				quote: '...',
 			},
 			children: [
 				{
@@ -270,6 +290,7 @@ const config: Config = {
 					pageInfo: {
 						includeEmojiInTitle: true,
 						chips: ['Other', 'Group', 'Project'],
+						quote: '...',
 					},
 				},
 				{
@@ -282,6 +303,7 @@ const config: Config = {
 					pageInfo: {
 						includeEmojiInTitle: true,
 						chips: ['Other', 'Additive Industries', 'Project'],
+						quote: '...',
 					},
 				},
 			],

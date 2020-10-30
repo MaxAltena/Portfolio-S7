@@ -1,11 +1,31 @@
 @import 'styles';
 
+.content,
 ::ng-deep .content {
+	.margin {
+		margin: 32px;
+	}
+
+	.margin-x {
+		margin-right: 32px;
+		margin-left: 32px;
+	}
+
+	.margin-y {
+		margin-top: 32px;
+		margin-bottom: 32px;
+	}
+
 	.important {
 		border-radius: 4px;
 		padding: 16px;
 		border: 2px solid rgba(255, 0, 51, 1);
 		background: rgba(255, 0, 51, 0.2);
+	}
+
+	.table-of-contents,
+	.table-of-items {
+		font-weight: bold;
 	}
 
 	ol,
@@ -16,7 +36,7 @@
 	}
 
 	p {
-		line-height: 1.62;
+		line-height: 1.672;
 		letter-spacing: 0.16px;
 	}
 
@@ -25,8 +45,29 @@
 	h4,
 	h5,
 	h6 {
+		color: map-get($Portfolio-S7-primary, 700);
 		margin: 0;
 		padding: 0;
+	}
+
+	blockquote {
+		position: relative;
+		margin: 24px;
+		font-style: italic;
+
+		&::after {
+			content: '';
+			z-index: -1;
+			position: absolute;
+			background: black;
+			opacity: 0.15;
+			border-radius: 4px;
+			width: 4px;
+			height: calc(100% + 12px);
+			top: -6px;
+			bottom: -6px;
+			left: -10px;
+		}
 	}
 
 	code {
@@ -37,7 +78,8 @@
 			content: '';
 			z-index: -1;
 			position: absolute;
-			background: rgba(0, 0, 0, 0.15);
+			background: black;
+			opacity: 0.15;
 			border-radius: 4px;
 			width: calc(100% + 4px);
 			height: calc(100% + 4px);
@@ -50,32 +92,15 @@
 
 	a {
 		cursor: pointer;
+		color: black;
 		transition: color 100ms ease-in-out;
-		text-decoration: none;
-		padding: 2px;
-		position: relative;
-
-		&::after {
-			content: '';
-			position: absolute;
-			bottom: 0;
-			left: 0;
-			right: 0;
-			width: 100%;
-			height: 4px;
-			border-radius: 4px;
-			background: map-get($Portfolio-S7-accent, 500);
-			z-index: -1;
-			transition: height 100ms ease-in-out, background 100ms ease-in-out;
-		}
+		text-decoration-color: map-get($Portfolio-S7-accent, 500);
+		text-decoration-style: underline;
+		font-weight: bold;
 
 		&:hover,
 		&:active {
-			color: white;
-
-			&::after {
-				height: 100%;
-			}
+			color: map-get($Portfolio-S7-accent, 500);
 		}
 	}
 }

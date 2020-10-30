@@ -24,12 +24,15 @@ export class AppComponent {
 		return outlet.isActivated ? outlet.activatedRoute : '';
 	}
 
-	setCurrentExpand(current: string): void {
-		this.currentExpand = current;
+	setCurrentExpand(current: string | null): void {
+		if (current === null) {
+			this.currentExpand = '';
+		} else {
+			this.currentExpand = current;
+		}
 	}
 
 	constructor(router: Router) {
-		// this.router = router;
 		router.events.subscribe(() => {
 			const paths = router.url.split('/');
 			paths.shift();

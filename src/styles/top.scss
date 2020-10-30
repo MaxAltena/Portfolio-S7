@@ -14,4 +14,24 @@ div.top {
 		margin: 16px -4px !important;
 		user-select: none;
 	}
+
+	blockquote {
+		position: relative;
+		margin: 24px;
+		font-style: italic;
+
+		&::after {
+			content: '';
+			z-index: -1;
+			position: absolute;
+			background: black;
+			opacity: 0.15;
+			border-radius: 4px;
+			width: 4px;
+			height: calc(100% + 12px);
+			top: -6px;
+			bottom: -6px;
+			left: -10px;
+		}
+	}
 }

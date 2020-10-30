@@ -25,8 +25,9 @@ export interface PageInfo {
 	title?: string;
 	includeEmojiInTitle?: boolean;
 	iframeLocation?: string;
-	content?: unknown;
 	chips?: Chip[];
+	quote?: string;
+	content?: unknown; // TODO: Add this for more dynamic from json loading capabilities?
 }
 
 export type Chip =
