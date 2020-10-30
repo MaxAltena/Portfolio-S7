@@ -38,7 +38,8 @@ $Portfolio-S7-theme: mat-light-theme(
 
 html,
 body {
-	height: 100%;
+	min-height: 100%;
+	scroll-padding-top: 88px;
 }
 body {
 	margin: 0;

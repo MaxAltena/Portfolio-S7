@@ -36,6 +36,7 @@ export type Chip =
 	| 'Story Creation'
 	| 'Other'
 	| 'Personal'
+	| 'Duo'
 	| 'Group'
 	| 'Additive Industries'
 	| 'Concept'

@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { RouteReuseStrategy, RouterModule } from '@angular/router';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -33,7 +33,7 @@ const materialModules = [
 import { AppComponent } from 'src/app/app.component';
 import pages from 'src/app/pages';
 import components from 'src/app/components';
-import { AppRoutingModule } from 'src/app/app-routing.module';
+import { AppRoutingModule } from 'src/app/routing/app-routing.module';
 import { environment } from 'src/environments/environment';
 
 @NgModule({

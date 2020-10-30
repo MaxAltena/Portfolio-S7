@@ -50,9 +50,12 @@ export class PageDynamicComponent {
 		this.router = router;
 		this.sanitizer = sanitizer;
 
-		router.events.subscribe(() => {
-			const paths = router.url.split('/');
+		this.router.events.subscribe(() => {
+			const paths = this.router.url.split('/');
 			paths.shift();
+			paths.forEach((path: string, index: number): void => {
+				paths[index] = path.split('#')[0];
+			});
 			this.paths = paths;
 
 			const first = config.items.find(
@@ -63,23 +66,25 @@ export class PageDynamicComponent {
 				this.parent = first;
 			}
 
-			if (first.children) {
-				const second = first.children.find(
-					(item: Item) => item.path === paths[1]
-				);
+			if (first) {
+				if (first.children) {
+					const second = first.children.find(
+						(item: Item) => item.path === paths[1]
+					);
 
-				if (second) {
-					if (this.item !== second) {
-						this.item = second;
+					if (second) {
+						if (this.item !== second) {
+							this.item = second;
+						}
+					} else {
+						if (this.item !== first) {
+							this.item = first;
+						}
 					}
 				} else {
 					if (this.item !== first) {
 						this.item = first;
 					}
-				}
-			} else {
-				if (this.item !== first) {
-					this.item = first;
 				}
 			}
 		});

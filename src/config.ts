@@ -49,11 +49,7 @@ const config: Config = {
 					includeInNavigation: true,
 					pageInfo: {
 						includeEmojiInTitle: true,
-						chips: [
-							'Human Centered Design',
-							'Personal',
-							'Assignment',
-						],
+						chips: ['Human Centered Design', 'Duo', 'Assignment'],
 					},
 				},
 				{

@@ -1,32 +1,52 @@
 @import '~@angular/material/theming';
 
 :host {
-	min-height: 100vh;
-	height: 100vh;
-	overflow-y: hidden;
+	margin-top: 64px;
+	min-height: calc(100vh - 64px);
 	display: flex;
 	flex-direction: column;
 
 	mat-toolbar {
+		position: fixed;
+		left: 0;
+		right: 0;
+		top: 0;
+		width: 100%;
 		padding: 16px;
+		z-index: 10;
+		height: 64px !important;
 
 		user-select: none;
 
 		.margin-right-16 {
 			margin-right: 16px;
 		}
-	}
 
-	.spacer {
-		flex: 1 1 auto;
+		.spacer {
+			flex: 1 1 auto;
+		}
+
+		.github-link {
+			svg {
+				margin: auto;
+				max-width: 65%;
+				fill: white;
+			}
+		}
 	}
 
 	mat-sidenav-container {
 		flex-grow: 1;
+		min-height: calc(100vh - 64px);
 
 		mat-sidenav {
-			width: 300px;
+			position: fixed;
+			top: 64px;
+			left: 0;
+			bottom: 0;
 			padding-bottom: 30px;
+			width: 300px;
+			z-index: 5;
 
 			user-select: none;
 
@@ -114,26 +134,20 @@
 
 		mat-sidenav-content {
 			position: relative;
-			overflow-x: hidden;
-			overflow-y: auto;
-			scroll-behavior: smooth;
-			scroll-padding: 32px 0 0 0;
+			top: 0;
+			left: 0;
+			right: 0;
+			width: calc(100% - 300px);
+			min-height: calc(100vh - 64px);
+			overflow: hidden;
 
-			.content-window {
+			> *,
+			router-outlet {
 				position: relative;
 				left: 0;
 				top: 0;
 				right: 0;
 				width: 100%;
-				height: auto;
-
-				> * {
-					position: relative;
-					left: 0;
-					top: 0;
-					right: 0;
-					width: 100%;
-				}
 			}
 		}
 	}
