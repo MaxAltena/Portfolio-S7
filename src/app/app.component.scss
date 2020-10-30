@@ -66,6 +66,12 @@
 				background: #eee;
 			}
 
+			mat-icon {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+
 			::ng-deep .bold.mat-line {
 				font-weight: bold !important;
 			}
@@ -93,6 +99,10 @@
 				::ng-deep .mat-expansion-panel-body {
 					padding: 0;
 					margin: 0;
+
+					.mat-list-text {
+						font-size: 14px;
+					}
 				}
 			}
 
