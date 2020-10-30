@@ -14,6 +14,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 const materialModules = [
 	MatToolbarModule,
@@ -26,6 +27,7 @@ const materialModules = [
 	MatChipsModule,
 	MatDividerModule,
 	MatGridListModule,
+	MatProgressBarModule,
 ];
 
 import { AppComponent } from 'src/app/app.component';
