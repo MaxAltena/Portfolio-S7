@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, RouterOutlet } from '@angular/router';
+import { SwUpdate } from '@angular/service-worker';
 import config from 'src/config';
 import { Item } from 'src/types/item';
 import { getGitVariables } from 'src/utils/git-config';
@@ -29,6 +30,24 @@ export class AppComponent {
 	}
 
 	identifyer = (index: number, item: Item): string => `${index}-${item.id}`;
+
+	constructor(private swUpdate: SwUpdate) {
+		this.swUpdate.available.subscribe(() => {
+			if (
+				confirm(
+					'Update Available. Refresh the page now to update the cache.'
+				)
+			) {
+				location.reload();
+			} else {
+				console.log('Continuing with older version.');
+			}
+		});
+
+		setInterval(() => {
+			this.swUpdate.checkForUpdate();
+		}, 3600000);
+	}
 
 	// TODO Currently doesnt work as expected https://github.com/angular/components/issues/20517
 	// constructor(router: Router) {
