@@ -103,12 +103,15 @@
 			src="https://www.googletagmanager.com/gtag/js?id=UA-102319824-8"
 		></script>
 		<script>
-			window.dataLayer = window.dataLayer || [];
-			function gtag() {
-				dataLayer.push(arguments);
+			var host = window.location.hostname;
+			if (host != 'localhost') {
+				window.dataLayer = window.dataLayer || [];
+				function gtag() {
+					dataLayer.push(arguments);
+				}
+				gtag('js', new Date());
+				gtag('config', 'UA-102319824-8');
 			}
-			gtag('js', new Date());
-			gtag('config', 'UA-102319824-8');
 		</script>
 		<script>
 			window.app = {

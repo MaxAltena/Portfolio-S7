@@ -1,7 +1,7 @@
-@use './header.scss';
-@use './top.scss';
-@use './footer.scss';
-@use './markdown.scss';
+@use 'header';
+@use 'top';
+@use 'footer';
+@use 'markdown';
 
 .container {
 	width: 90%;

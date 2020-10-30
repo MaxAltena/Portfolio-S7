@@ -2,6 +2,14 @@ div.top {
 	width: 100%;
 	height: auto;
 
+	h1 {
+		font-size: 40px;
+		font-weight: 900;
+		line-height: 40px;
+		letter-spacing: 0.08px;
+		margin: 16px 0;
+	}
+
 	::ng-deep .mat-chip-list-wrapper {
 		margin: 16px -4px !important;
 		user-select: none;
