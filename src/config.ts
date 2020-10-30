@@ -22,6 +22,7 @@ import {
 	PageMyAIFriendComponent,
 	PageGroupContributionComponent,
 	PageStakeholderProfilesComponent,
+	PageProtaganistComponent,
 } from 'src/app/pages';
 
 const items: Item[] = [
@@ -147,6 +148,14 @@ const items: Item[] = [
 				path: 'research-storytelling-emotion',
 				component: PageResearchStorytellingEmotionComponent,
 				title: 'Research Storytelling & Emotion',
+				includeInRoutes: true,
+				includeInNavigation: true,
+			},
+			{
+				id: 303,
+				path: 'protaganist',
+				component: PageProtaganistComponent,
+				title: 'Protaganist',
 				includeInRoutes: true,
 				includeInNavigation: true,
 			},

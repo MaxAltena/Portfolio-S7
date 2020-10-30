@@ -85,7 +85,7 @@
 		<span *ngIf="git.gitHash && git.gitHashShort">
 			<mat-divider></mat-divider>
 			<mat-list class="no-padding">
-				<mat-list-item class="height-80 flex-column">
+				<mat-list-item class="height-80 flex-column selectable">
 					<p class="mat-small">Last commit on GitHub:</p>
 					<p class="mat-small" *ngIf="git.gitMessage">
 						{{ git.gitMessage }}

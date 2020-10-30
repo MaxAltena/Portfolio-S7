@@ -4,3 +4,9 @@ RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -d
 RewriteRule ^ - [L]
 
 RewriteRule ^ /S7/index.html
+
+<IfModule mod_headers.c>
+	<FilesMatch "\.(html)$">
+		Header set Cache-Control "no-cache, no-store"
+	</FilesMatch>
+</IfModule>

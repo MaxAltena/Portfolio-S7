@@ -54,15 +54,18 @@ export const cdPages = [
 import { PageStoryCreationComponent } from './story-creation/story-creation.page';
 import { PagePechaKuchaComponent } from './story-creation/pecha-kucha/pecha-kucha.page';
 import { PageResearchStorytellingEmotionComponent } from './story-creation/research-storytelling-emotion/research-storytelling-emotion.page';
+import { PageProtaganistComponent } from './story-creation/protaganist/protaganist.page';
 
 export * from './story-creation/story-creation.page';
 export * from './story-creation/pecha-kucha/pecha-kucha.page';
 export * from './story-creation/research-storytelling-emotion/research-storytelling-emotion.page';
+export * from './story-creation/protaganist/protaganist.page';
 
 export const scPages = [
 	PageStoryCreationComponent,
 	PagePechaKuchaComponent,
 	PageResearchStorytellingEmotionComponent,
+	PageProtaganistComponent,
 ];
 
 import { PageMediaTheoryComponent } from './media-theory/media-theory.page';
