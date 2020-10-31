@@ -11,3 +11,13 @@
 
 > The porfolio of Max Altena for Semester 7 which was a minor named Digital Experience Design.
 > Find it on [https://portfolio.maxaltena.com/S7/](https://portfolio.maxaltena.com/S7/)!
+
+## TODO list
+
+-   [ ] Add dark mode support? 🤔
+-   [ ] Add emojis to list of items (in subject page)
+-   [ ] Create more experiences within the portfolio
+-   [ ] Footer view with options (back to top & share?)
+-   [ ] Add learning outcomes? Is this required?
+-   [ ] Ability to search on tags?
+-   [ ] Update title based on current route
