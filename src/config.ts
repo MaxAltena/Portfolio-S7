@@ -38,8 +38,7 @@ const config: Config = {
 			includeInNavigation: true,
 			pageInfo: {
 				chips: ['Human Centered Design', 'Subject'],
-				quote:
-					"Sounds a bit egocentric doesn't it? But it is for the better of the user and in the end the human itself... That's what they say.",
+				quote: `Sounds a bit egocentric doesn't it? But it is for the better of the user and in the end the human itself... That's what they say.`,
 			},
 			children: [
 				{
@@ -52,8 +51,7 @@ const config: Config = {
 					pageInfo: {
 						includeEmojiInTitle: true,
 						chips: ['Human Centered Design', 'Duo', 'Assignment'],
-						quote:
-							"Creating probes to probe our own behaviour. Something I haven't done as of yet.",
+						quote: `Creating probes to probe our own behaviour. Something I haven't done as of yet.`,
 					},
 				},
 				{
@@ -88,8 +86,7 @@ const config: Config = {
 							'Additive Industries',
 							'Research',
 						],
-						quote:
-							"Who are the people that have a stake in our project? Let's find out!",
+						quote: `Who are the people that have a stake in our project? Let's find out!`,
 					},
 				},
 			],
