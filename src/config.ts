@@ -171,7 +171,7 @@ const config: Config = {
 			includeInNavigation: true,
 			pageInfo: {
 				chips: ['Story Creation', 'Subject'],
-				quote: `Creating a story isn't done in a day, more like an hour or 2. But creating a compelling story might take a while.`,
+				quote: `Creating a story isn't done in a day, more like an hour or 2. But creating a compelling and engaging story might take a while.`,
 			},
 			children: [
 				{
@@ -184,7 +184,8 @@ const config: Config = {
 					pageInfo: {
 						includeEmojiInTitle: true,
 						chips: ['Story Creation', 'Personal', 'Assignment'],
-						quote: '...',
+						quote:
+							'20 slides, 20 seconds each. What could go wrong?',
 					},
 				},
 				{
