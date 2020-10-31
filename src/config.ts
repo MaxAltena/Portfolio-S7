@@ -70,7 +70,8 @@ const config: Config = {
 							'Additive Industries',
 							'Research',
 						],
-						quote: '...',
+						quote:
+							'Getting insights from my dad who works at one of the largest 2D printing houses in the benelux. He should have some insights on their process, right?',
 					},
 				},
 				{
@@ -87,7 +88,8 @@ const config: Config = {
 							'Additive Industries',
 							'Research',
 						],
-						quote: '...',
+						quote:
+							"Who are the people that have a stake in our project? Let's find out!",
 					},
 				},
 			],

@@ -24,7 +24,8 @@
 	}
 
 	.table-of-contents,
-	.table-of-items {
+	.table-of-items,
+	.table-of-subjects {
 		font-weight: bold;
 	}
 
@@ -48,6 +49,11 @@
 		color: map-get($Portfolio-S7-primary, 700);
 		margin: 0;
 		padding: 0;
+	}
+
+	img {
+		max-width: 80%;
+		margin: 16px 10%;
 	}
 
 	blockquote {
