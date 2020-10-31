@@ -12,11 +12,11 @@ const fs = require('fs'),
 	values = {
 		buildTime: Date.now(),
 		gitHash: gitData[0],
-		gitHashShort: gitData[0].substr(0, 8),
+		gitHashShort: gitData[0].substr(0, 7),
 		gitTimestamp: gitData[1],
 		gitAuthorName: gitData[2],
 		gitAuthorEmail: gitData[3],
-		gitBranch: gitData[4].split(',')[0].substr(7),
+		gitBranch: gitData[4].split(',')[0].substr(8),
 		gitMessage: gitData[5].replace(/\r?\n|\r/g, ''),
 	};
 
