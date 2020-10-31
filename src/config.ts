@@ -244,7 +244,7 @@ const config: Config = {
 					pageInfo: {
 						includeEmojiInTitle: true,
 						chips: ['Media Theory', 'Personal', 'Assignment'],
-						quote: '...',
+						quote: 'No phone. Where is Max?',
 					},
 				},
 				{
