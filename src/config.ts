@@ -26,7 +26,7 @@ const config: Config = {
 			includeInNavigation: true,
 			pageInfo: {
 				title: 'About Max Altena',
-				iframeLocation: 'https://maxaltena.com/#about',
+				iframeLocation: 'https://maxaltena.com/',
 			},
 		},
 		{
