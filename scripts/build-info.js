@@ -16,7 +16,7 @@ const fs = require('fs'),
 		gitTimestamp: gitData[1],
 		gitAuthorName: gitData[2],
 		gitAuthorEmail: gitData[3],
-		gitBranch: gitData[4].split(',')[0].substr(8),
+		gitBranch: gitData[4].split(',')[0].substr(7),
 		gitMessage: gitData[5].replace(/\r?\n|\r/g, ''),
 	};
 
