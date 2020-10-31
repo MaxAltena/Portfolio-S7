@@ -86,7 +86,7 @@ const config: Config = {
 							'Additive Industries',
 							'Research',
 						],
-						quote: `Who are the people that have a stake in our project? Let's find out!`,
+						quote: `...`,
 					},
 				},
 			],
@@ -113,7 +113,7 @@ const config: Config = {
 					pageInfo: {
 						includeEmojiInTitle: true,
 						chips: ['Critical Design', 'Personal', 'Assignment'],
-						quote: '...',
+						quote: `What are things I am bothered with? Let's find out how much I hate and care about things.`,
 					},
 				},
 				{
@@ -126,7 +126,7 @@ const config: Config = {
 					pageInfo: {
 						includeEmojiInTitle: true,
 						chips: ['Critical Design', 'Personal', 'Assignment'],
-						quote: '...',
+						quote: `Sticking to your values is important. For me atleast. What other values do I live by?`,
 					},
 				},
 				{
@@ -151,7 +151,12 @@ const config: Config = {
 					includeInNavigation: true,
 					pageInfo: {
 						includeEmojiInTitle: true,
-						chips: ['Critical Design', 'Personal', 'Concept'],
+						chips: [
+							'Critical Design',
+							'Personal',
+							'Assignment',
+							'Concept',
+						],
 						quote: '...',
 					},
 				},
