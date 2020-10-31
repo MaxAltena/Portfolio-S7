@@ -38,7 +38,7 @@ const config: Config = {
 			includeInNavigation: true,
 			pageInfo: {
 				chips: ['Human Centered Design', 'Subject'],
-				quote: `Sounds a bit egocentric doesn't it? But it is for the better of the user and in the end the human itself... That's what they say.`,
+				quote: `Sounds a bit egocentric doesn't it? But it is for the better of the user and in the end the human itself... Atleast, that's what they say.`,
 			},
 			children: [
 				{
