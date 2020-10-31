@@ -109,4 +109,8 @@
 			color: map-get($Portfolio-S7-accent, 500);
 		}
 	}
+
+	.strike-through {
+		text-decoration-line: line-through;
+	}
 }

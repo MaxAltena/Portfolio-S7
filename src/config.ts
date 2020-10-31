@@ -100,7 +100,7 @@ const config: Config = {
 			includeInNavigation: true,
 			pageInfo: {
 				chips: ['Critical Design', 'Subject'],
-				quote: '...',
+				quote: `Let's be critical about what we design. Finding problems, asking questions and make eachother think about design.`,
 			},
 			children: [
 				{
@@ -166,7 +166,7 @@ const config: Config = {
 			includeInNavigation: true,
 			pageInfo: {
 				chips: ['Story Creation', 'Subject'],
-				quote: '...',
+				quote: `Creating a story isn't done in a day, more like an hour or 2. But creating a compelling story might take a while.`,
 			},
 			children: [
 				{
@@ -224,7 +224,8 @@ const config: Config = {
 			includeInNavigation: true,
 			pageInfo: {
 				chips: ['Media Theory', 'Subject'],
-				quote: '...',
+				quote:
+					'How do we use media? Why do we use media? What is media? What is life all about? 42.',
 			},
 			children: [
 				{
@@ -276,7 +277,7 @@ const config: Config = {
 			includeInNavigation: true,
 			pageInfo: {
 				chips: ['Other', 'Subject'],
-				quote: '...',
+				quote: `Throughout my whole life, I've been pretty funny. Some people are saying: 'You are so funny, you should be a stand-up comedian!' I always respond with: 'I would be a stand-up comedian. But I prefer sitting.'`,
 			},
 			children: [
 				{
