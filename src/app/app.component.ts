@@ -89,9 +89,9 @@ export class AppComponent implements OnInit {
 					'%pageTitle%',
 					subitem ? `${subitem.title} – ${item.title}` : item.title
 				);
-				if (subitem && subitem.emoji) {
+				if (subitem && subitem.emoji && subitem.emoji !== '└') {
 					this.favIcon.href = this.getEmojiIconText(subitem.emoji);
-				} else if (item.emoji) {
+				} else if (item.emoji && item.emoji !== '└') {
 					this.favIcon.href = this.getEmojiIconText(item.emoji);
 				} else {
 					this.favIcon.href = this.getEmojiIconText('7️⃣');
