@@ -26,6 +26,14 @@ export class PageDynamicComponent {
 		return this.sanitizer.bypassSecurityTrustResourceUrl(iframeLocation);
 	};
 
+	getIframeTitle = (): string => {
+		if (this.item.pageInfo.title) {
+			return this.item.pageInfo.title.toLowerCase();
+		} else {
+			return this.item.title.toLowerCase();
+		}
+	};
+
 	getHeading = (): string => {
 		if (this.item.pageInfo) {
 			if (this.item.pageInfo.title) {
