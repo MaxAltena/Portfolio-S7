@@ -1,6 +1,6 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, Title } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RouteReuseStrategy, RouterModule } from '@angular/router';
+import { RouterModule } from '@angular/router';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -48,7 +48,7 @@ import { environment } from 'src/environments/environment';
 		}),
 	],
 	exports: [RouterModule],
-	providers: [],
+	providers: [Title],
 	bootstrap: [AppComponent],
 })
 export class AppModule {}

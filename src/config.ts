@@ -2,6 +2,7 @@ import { Config } from 'src/types';
 
 const config: Config = {
 	title: 'Portfolio S7 – Max Altena',
+	titleTemplate: '%pageTitle% – %title%',
 	defaultURL: 'https://maxaltena.com/',
 	items: [
 		{
@@ -131,7 +132,7 @@ const config: Config = {
 				},
 				{
 					type: 'iframe',
-					path: 'personal-manifesto-web',
+					path: 'personal-manifesto-website',
 					title: 'Personal Manifesto (Website)',
 					emoji: '└',
 					includeInRoutes: true,

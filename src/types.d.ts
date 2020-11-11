@@ -1,5 +1,6 @@
 export interface Config {
 	title: string;
+	titleTemplate: string;
 	defaultURL: string;
 	items: Item[];
 }

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import {
 	ActivatedRoute,
 	NavigationEnd,
@@ -6,11 +7,12 @@ import {
 	RouterOutlet,
 } from '@angular/router';
 import config from 'src/config';
+import { BaseItem } from 'src/types';
 import { getGitVariables } from 'src/utils/git-config';
 import { fadeAnimation } from 'src/utils/route-animations';
 import { formatTimeAgo } from 'src/utils/time-formatter';
 
-declare let ga: (arg1: any, arg2?: any, arg3?: any) => void; // eslint-disable-line @typescript-eslint/no-explicit-any
+declare let gtag: (arg1: any, arg2: any, arg3?: any) => void; // eslint-disable-line @typescript-eslint/no-explicit-any
 
 @Component({
 	selector: 'app-portfolio-s7',
@@ -18,7 +20,7 @@ declare let ga: (arg1: any, arg2?: any, arg3?: any) => void; // eslint-disable-l
 	styleUrls: ['./app.component.scss'],
 	animations: [fadeAnimation],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
 	init = true;
 	title = config.title;
 	opened = true;
@@ -26,6 +28,7 @@ export class AppComponent {
 	items = config.items;
 	timeAgo = formatTimeAgo(new Date(Number(this.git.gitTimestamp) * 1000));
 	currentExpand = '';
+	favIcon: HTMLLinkElement = document.querySelector('#appIcon');
 
 	prepareRoute(outlet: RouterOutlet): ActivatedRoute | '' {
 		return outlet.isActivated ? outlet.activatedRoute : '';
@@ -39,15 +42,50 @@ export class AppComponent {
 		}
 	}
 
-	constructor(router: Router) {
-		router.events.subscribe(event => {
-			if (event instanceof NavigationEnd) {
-				ga('set', 'page', event.urlAfterRedirects);
-				ga('send', 'pageview');
-			}
+	getEmojiIconText(emoji: string): string {
+		return `data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>${emoji}</text></svg>`;
+	}
 
-			const paths = router.url.split('/');
+	constructor(private router: Router, private titleService: Title) {}
+
+	ngOnInit(): void {
+		this.router.events.subscribe(event => {
+			const paths = this.router.url.split('/');
 			paths.shift();
+
+			if (event instanceof NavigationEnd) {
+				try {
+					gtag('set', 'page', event.urlAfterRedirects);
+					gtag('send', 'pageview');
+				} catch (error) {
+					console.error(error);
+				}
+				const item = config.items.find(
+					configItem => configItem.path === paths[0]
+				);
+				let subitem: BaseItem;
+				if (paths[1])
+					subitem = item.children.find(
+						configSubItem => configSubItem.path === paths[1]
+					);
+
+				let title = config.titleTemplate.replace(
+					'%title%',
+					config.title
+				);
+				title = title.replace(
+					'%pageTitle%',
+					subitem ? `${subitem.title} – ${item.title}` : item.title
+				);
+				if (subitem && subitem.emoji) {
+					this.favIcon.href = this.getEmojiIconText(subitem.emoji);
+				} else if (item.emoji) {
+					this.favIcon.href = this.getEmojiIconText(item.emoji);
+				} else {
+					this.favIcon.href = this.getEmojiIconText('7️⃣');
+				}
+				this.titleService.setTitle(title);
+			}
 
 			if (paths[0] !== this.currentExpand) {
 				setTimeout(() => {
@@ -55,7 +93,7 @@ export class AppComponent {
 				}, 10);
 			}
 
-			const hashs = router.url.split('#');
+			const hashs = this.router.url.split('#');
 			if (hashs.length === 2 && this.init) {
 				setTimeout(() => {
 					const element = document.querySelector(`#${hashs[1]}`);

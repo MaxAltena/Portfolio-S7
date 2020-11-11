@@ -2,7 +2,11 @@
 	<div *ngSwitchCase="'iframe'" class="dynamic dynamic-iframe">
 		<div class="background">
 			<mat-progress-bar mode="indeterminate"></mat-progress-bar>
-			<p>Loading {{ item.title.toLowerCase() }} page...</p>
+			<p>
+				Loading {{ item.pageInfo.title ?
+				item.pageInfo.title.toLowerCase() : item.title.toLowerCase() }}
+				page...
+			</p>
 		</div>
 		<iframe
 			[src]="getIframeURL()"
