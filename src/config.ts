@@ -153,7 +153,8 @@ const config: Config = {
 					pageInfo: {
 						includeEmojiInTitle: true,
 						chips: ['Critical Design', 'Personal', 'Assignment'],
-						quote: '...',
+						quote:
+							'The way to get good ideas is to get lots of ideas and throw the bad ones away. - Linus Pauling',
 					},
 				},
 				{
@@ -297,7 +298,7 @@ const config: Config = {
 			includeInNavigation: true,
 			pageInfo: {
 				chips: ['Other', 'Subject'],
-				quote: `Throughout my whole life, I've been pretty funny. Some people are saying: 'You are so funny, you should be a stand-up comedian!' I always respond with: 'I would be a stand-up comedian. But I prefer sitting.'`,
+				quote: `Throughout my whole life, I've been pretty funny. Some people are saying: 'You are so funny, you should be a stand-up comedian!' I always respond with: 'I would be a stand-up comedian. But I prefer sitting.' - TimTheTatman`,
 			},
 			children: [
 				{

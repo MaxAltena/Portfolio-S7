@@ -16,8 +16,10 @@
 
 -   [ ] Add dark mode support? 🤔
 -   [ ] Add emojis to list of items (in subject page)
--   [ ] Create more experiences within the portfolio
+-   [x] Create more experiences within the portfolio
 -   [ ] Footer view with options (back to top & share?)
--   [ ] Add learning outcomes? Is this required?
+-   [x] Add learning outcomes? Is this required?
 -   [ ] Ability to search on tags?
--   [ ] Update title based on current route
+-   [x] Update title based on current route
+-   [x] Better mobile/tablet experience
+-   [ ] Dynamic table of contents depending on content

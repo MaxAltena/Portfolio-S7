@@ -40,6 +40,11 @@ html,
 body {
 	min-height: 100%;
 	scroll-padding-top: 88px;
+	overflow-x: auto;
+	overflow-y: auto;
+}
+html {
+	overflow-y: scroll;
 }
 body {
 	margin: 0;
