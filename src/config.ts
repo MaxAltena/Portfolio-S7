@@ -4,6 +4,7 @@ const config: Config = {
 	title: 'Portfolio S7 – Max Altena',
 	titleTemplate: '%pageTitle% – %title%',
 	defaultURL: 'https://maxaltena.com/',
+	githubURL: 'https://github.com/MaxAltena/Portfolio-S7/',
 	items: [
 		{
 			type: 'default',

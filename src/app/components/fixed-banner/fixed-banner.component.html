@@ -1,5 +1,12 @@
-<a href="https://maxaltena.com/" target="_blank">
-	<marquee>
+<a
+	href="https://maxaltena.com/"
+	target="_blank"
+	[class.isSmallDevice]="isSmallDevice"
+>
+	<marquee
+		[direction]="isSmallDevice ? 'up' : 'left'"
+		[scrollAmount]="isSmallDevice ? 2 : 6"
+	>
 		Made with 💖 by
 		<span>Max</span>
 	</marquee>

@@ -2,6 +2,7 @@ export interface Config {
 	title: string;
 	titleTemplate: string;
 	defaultURL: string;
+	githubURL: string;
 	items: Item[];
 }
 

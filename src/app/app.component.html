@@ -5,7 +5,7 @@
 	<h1>{{ title }}</h1>
 	<span class="spacer"></span>
 	<a
-		href="https://github.com/MaxAltena/Portfolio-S7/"
+		href="{{ githubURL }}"
 		target="_blank"
 		mat-icon-button
 		class="github-link"
@@ -22,7 +22,7 @@
 	</a>
 </mat-toolbar>
 
-<mat-sidenav-container>
+<mat-sidenav-container [hasBackdrop]="isSmallDevice">
 	<mat-sidenav
 		#sidenav
 		mode="side"
@@ -114,9 +114,7 @@
 					</p>
 					<p class="mat-small">
 						<a
-							href="https://github.com/MaxAltena/Portfolio-S7/commit/{{
-								git.gitHash
-							}}"
+							href="{{ githubURL }}commit/{{ git.gitHash }}"
 							target="_blank"
 							>{{ git.gitHashShort }}</a
 						>
@@ -131,4 +129,4 @@
 	</mat-sidenav-content>
 </mat-sidenav-container>
 
-<app-fixed-banner></app-fixed-banner>
+<app-fixed-banner [isSmallDevice]="isSmallDevice"></app-fixed-banner>
