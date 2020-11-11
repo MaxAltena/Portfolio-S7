@@ -1,9 +1,16 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute, Router, RouterOutlet } from '@angular/router';
+import {
+	ActivatedRoute,
+	NavigationEnd,
+	Router,
+	RouterOutlet,
+} from '@angular/router';
 import config from 'src/config';
 import { getGitVariables } from 'src/utils/git-config';
 import { fadeAnimation } from 'src/utils/route-animations';
 import { formatTimeAgo } from 'src/utils/time-formatter';
+
+declare let ga: (arg1: any, arg2?: any, arg3?: any) => void; // eslint-disable-line @typescript-eslint/no-explicit-any
 
 @Component({
 	selector: 'app-portfolio-s7',
@@ -33,7 +40,12 @@ export class AppComponent {
 	}
 
 	constructor(router: Router) {
-		router.events.subscribe(() => {
+		router.events.subscribe(event => {
+			if (event instanceof NavigationEnd) {
+				ga('set', 'page', event.urlAfterRedirects);
+				ga('send', 'pageview');
+			}
+
 			const paths = router.url.split('/');
 			paths.shift();
 

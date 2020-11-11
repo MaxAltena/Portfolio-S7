@@ -130,6 +130,18 @@ const config: Config = {
 					},
 				},
 				{
+					type: 'iframe',
+					path: 'personal-manifesto-web',
+					title: 'Personal Manifesto (Website)',
+					emoji: '└',
+					includeInRoutes: true,
+					includeInNavigation: true,
+					pageInfo: {
+						title: 'Personal manifesto Max Altena',
+						iframeLocation: 'https://maxaltena.com/manifest.json/',
+					},
+				},
+				{
 					type: 'default',
 					path: 'concepts',
 					title: 'Concepts',
