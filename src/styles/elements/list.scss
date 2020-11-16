@@ -1,0 +1,10 @@
+ol,
+ul {
+	li {
+		margin-bottom: 6px;
+
+		&:last-of-type {
+			margin-bottom: 0;
+		}
+	}
+}

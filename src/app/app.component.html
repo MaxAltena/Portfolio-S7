@@ -2,7 +2,7 @@
 	<button mat-icon-button class="margin-right-16" (click)="sidenav.toggle()">
 		<mat-icon>menu</mat-icon>
 	</button>
-	<h1>{{ title }}</h1>
+	<h1>{{ config.title }}</h1>
 	<span class="spacer"></span>
 	<button
 		mat-icon-button
@@ -20,11 +20,11 @@
 		</svg>
 	</button>
 	<mat-menu #gitHubMenu="matMenu">
-		<a mat-menu-item href="{{ githubURL }}" target="_blank">
+		<a mat-menu-item href="{{ config.githubRepoURL }}" target="_blank">
 			<mat-icon>launch</mat-icon>
 			<span>GitHub repo</span>
 		</a>
-		<a mat-menu-item href="https://github.com/MaxAltena/" target="_blank">
+		<a mat-menu-item href="{{ config.githubURL }}" target="_blank">
 			<mat-icon>launch</mat-icon>
 			<span>GitHub profile</span>
 		</a>
@@ -60,12 +60,12 @@
 		class="mat-elevation-z2"
 	>
 		<mat-nav-list>
-			<div *ngFor="let item of items">
-				<div *ngIf="item.children && item.children.length > 0">
+			<div *ngFor="let page of config.pages">
+				<div *ngIf="page.children && page.children.length > 0">
 					<mat-accordion>
 						<mat-expansion-panel
-							[expanded]="currentExpand === item.path"
-							(opened)="setCurrentExpand(item.path)"
+							[expanded]="currentExpand === page.path"
+							(opened)="setCurrentExpand(page.path)"
 							(closed)="setCurrentExpand(null)"
 						>
 							<mat-expansion-panel-header
@@ -73,68 +73,70 @@
 								[expandedHeight]="'48px'"
 							>
 								<mat-list-item
-									routerLink="{{ item.path }}"
+									routerLink="{{ page.path }}"
 									routerLinkActive="active-item"
 									[routerLinkActiveOptions]="{
 										exact: true
 									}"
-									*ngIf="item.includeInNavigation"
+									*ngIf="!page?.excludeFromNavigation"
 								>
-									<mat-icon mat-list-icon *ngIf="item.icon">{{
-										item.icon
+									<mat-icon mat-list-icon *ngIf="page.icon">{{
+										page.icon
 									}}</mat-icon>
-									<div mat-list-icon *ngIf="item.emoji">
-										{{ item.emoji }}
+									<div mat-list-icon *ngIf="page.emoji">
+										{{ page.emoji }}
 									</div>
 									<div mat-line class="bold">
-										{{ item.title }}
+										{{ page.navigationTitle || page.title }}
 									</div>
 								</mat-list-item>
 							</mat-expansion-panel-header>
-							<div *ngFor="let child of item.children">
+							<div *ngFor="let subPage of page.children">
 								<mat-list-item
-									routerLink="{{ item.path }}/{{
-										child.path
+									routerLink="{{ page.path }}/{{
+										subPage.path
 									}}"
 									routerLinkActive="active-item"
 									[routerLinkActiveOptions]="{
 										exact: true
 									}"
-									*ngIf="item.includeInNavigation"
+									*ngIf="!subPage?.excludeFromNavigation"
 								>
 									<mat-icon
 										mat-list-icon
-										*ngIf="child.icon"
-										>{{ child.icon }}</mat-icon
+										*ngIf="subPage.icon"
+										>{{ subPage.icon }}</mat-icon
 									>
-									<div mat-list-icon *ngIf="child.emoji">
-										{{ child.emoji }}
+									<div mat-list-icon *ngIf="subPage.emoji">
+										{{ subPage.emoji }}
 									</div>
-									<div mat-line>{{ child.title }}</div>
+									<div mat-line>{{ subPage.title }}</div>
 								</mat-list-item>
 							</div>
 						</mat-expansion-panel>
 					</mat-accordion>
 				</div>
-				<div *ngIf="!item.children || item.children.length === 0">
+				<div *ngIf="!page.children || page.children.length === 0">
 					<mat-list-item
-						routerLink="{{ item.path }}"
+						routerLink="{{ page.path }}"
 						routerLinkActive="active-item"
 						[routerLinkActiveOptions]="{ exact: true }"
-						*ngIf="item.includeInNavigation"
+						*ngIf="!page?.excludeFromNavigation"
 					>
-						<mat-icon mat-list-icon *ngIf="item.icon">{{
-							item.icon
+						<mat-icon mat-list-icon *ngIf="page.icon">{{
+							page.icon
 						}}</mat-icon>
-						<div mat-list-icon *ngIf="item.emoji">
-							{{ item.emoji }}
+						<div mat-list-icon *ngIf="page.emoji">
+							{{ page.emoji }}
 						</div>
-						<div mat-line class="bold">{{ item.title }}</div>
+						<div mat-line class="bold">
+							{{ page.navigationTitle || page.title }}
+						</div>
 					</mat-list-item>
 				</div>
 			</div>
 		</mat-nav-list>
-		<div *ngIf="git.gitHash && git.gitHashShort">
+		<div *ngIf="git.gitHash && git.gitHashShort && config.githubRepoURL">
 			<mat-divider></mat-divider>
 			<mat-list class="no-padding">
 				<mat-list-item class="height-80 flex-column selectable">
@@ -144,7 +146,9 @@
 					</p>
 					<p class="mat-small">
 						<a
-							href="{{ githubURL }}commit/{{ git.gitHash }}"
+							href="{{ config.githubRepoURL }}/commit/{{
+								git.gitHash
+							}}"
 							target="_blank"
 							>{{ git.gitHashShort }}</a
 						>

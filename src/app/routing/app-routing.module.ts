@@ -3,7 +3,7 @@ import { Routes, RouterModule, ExtraOptions } from '@angular/router';
 import config from 'src/config';
 import { getRoutes } from 'src/utils/routes';
 
-const routes: Routes = getRoutes(config.items);
+const routes: Routes = getRoutes(config.pages);
 
 const routerOptions: ExtraOptions = {
 	useHash: false,

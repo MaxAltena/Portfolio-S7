@@ -18,6 +18,10 @@
 
 		user-select: none;
 
+		h1 {
+			color: white;
+		}
+
 		.margin-right-16 {
 			margin-right: 16px;
 		}
@@ -135,11 +139,6 @@
 						font-size: 14px;
 					}
 				}
-			}
-
-			mat-card {
-				@include mat-elevation(4);
-				margin: 8px;
 			}
 		}
 

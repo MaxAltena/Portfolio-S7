@@ -1,0 +1,9 @@
+<div class="top">
+	<h1>{{ heading }}</h1>
+	<div class="chip-list">
+		<app-chip-list *ngIf="chips" [chips]="chips"></app-chip-list>
+	</div>
+	<blockquote *ngIf="quote">
+		{{ quote }}
+	</blockquote>
+</div>

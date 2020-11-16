@@ -1,0 +1,46 @@
+@import '../../../styles/styles';
+
+:host {
+	footer {
+		position: relative;
+		width: 100%;
+		min-width: 100%;
+		height: 48px;
+		margin-top: 32px;
+		user-select: none;
+		-webkit-user-drag: none;
+
+		a {
+			::ng-deep * {
+				display: flex;
+				align-items: center;
+			}
+
+			&.bottom-left {
+				position: absolute;
+				bottom: 16px;
+				left: 16px;
+
+				mat-icon {
+					margin-right: 8px;
+				}
+				span {
+					margin-right: 4px;
+				}
+			}
+
+			&.bottom-right {
+				position: absolute;
+				bottom: 16px;
+				right: 16px;
+
+				mat-icon {
+					margin-left: 8px;
+				}
+				span {
+					margin-left: 4px;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,20 @@
+<div class="toc">
+	<h2 id="toc">Table of Contents</h2>
+
+	<ol>
+		<li *ngFor="let section of sections">
+			<a
+				*ngIf="section !== 'Learning outcomes'"
+				routerLink="."
+				fragment="{{ section.toLowerCase() }}"
+				>{{ section }}</a
+			>
+			<a
+				*ngIf="section === 'Learning outcomes'"
+				routerLink="."
+				fragment="learning-outcomes"
+				>{{ section }}</a
+			>
+		</li>
+	</ol>
+</div>

@@ -1,0 +1,11 @@
+@import '../../../../styles/styles';
+
+:host {
+	.toc {
+		ol {
+			li {
+				font-weight: bold;
+			}
+		}
+	}
+}

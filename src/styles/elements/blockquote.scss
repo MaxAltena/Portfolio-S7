@@ -1,0 +1,21 @@
+@import '../material';
+
+blockquote {
+	position: relative;
+	margin: 24px;
+	font-style: italic;
+
+	&::after {
+		content: '';
+		z-index: -1;
+		position: absolute;
+		background: map-get($Portfolio-S7-accent, 500);
+		opacity: 0.2;
+		border-radius: 4px;
+		width: 4px;
+		height: calc(100% + 12px);
+		top: -6px;
+		bottom: -6px;
+		left: -10px;
+	}
+}

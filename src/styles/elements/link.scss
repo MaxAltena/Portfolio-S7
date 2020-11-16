@@ -1,0 +1,15 @@
+@import '../material';
+
+a:not(.mat-menu-item) {
+	cursor: pointer;
+	color: black;
+	transition: color 100ms ease-in-out;
+	text-decoration-color: map-get($Portfolio-S7-accent, 500);
+	text-decoration-style: underline;
+	font-weight: bold;
+
+	&:hover,
+	&:active {
+		color: map-get($Portfolio-S7-accent, 500);
+	}
+}

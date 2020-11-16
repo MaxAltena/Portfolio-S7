@@ -7,7 +7,7 @@ import {
 	RouterOutlet,
 } from '@angular/router';
 import config from 'src/config';
-import { BaseItem } from 'src/types';
+import { BasePage } from 'src/types';
 import { getGitVariables } from 'src/utils/git-config';
 import { fadeAnimation } from 'src/utils/route-animations';
 import { formatTimeAgo } from 'src/utils/time-formatter';
@@ -22,13 +22,11 @@ declare let gtag: (arg1: any, arg2: any, arg3?: any) => void; // eslint-disable-
 })
 export class AppComponent implements OnInit {
 	init = true;
-	title = config.title;
-	githubURL = config.githubURL;
 	opened = true;
 	git = getGitVariables();
-	items = config.items;
+	config = config;
 	timeAgo = formatTimeAgo(new Date(Number(this.git.gitTimestamp) * 1000));
-	currentExpand = '';
+	currentExpand: string | null = null;
 	favIcon: HTMLLinkElement = document.querySelector('#appIcon');
 	isSmallDevice = false;
 
@@ -37,11 +35,7 @@ export class AppComponent implements OnInit {
 	}
 
 	setCurrentExpand(current: string | null): void {
-		if (current === null) {
-			this.currentExpand = '';
-		} else {
-			this.currentExpand = current;
-		}
+		this.currentExpand = current;
 	}
 
 	getEmojiIconText(emoji: string): string {
@@ -71,32 +65,44 @@ export class AppComponent implements OnInit {
 				} catch (error) {
 					console.error(error);
 				}
-				const item = config.items.find(
-					configItem => configItem.path === paths[0]
+				const item = config.pages.find(
+					configPage => configPage.path === paths[0]
 				);
-				let subitem: BaseItem;
+				let subitem: BasePage;
 				if (paths[1]) {
 					subitem = item.children.find(
-						configSubItem => configSubItem.path === paths[1]
+						configSubPage => configSubPage.path === paths[1]
 					);
 				}
 
-				let title = config.titleTemplate.replace(
-					'%title%',
-					config.title
-				);
-				title = title.replace(
-					'%pageTitle%',
-					subitem ? `${subitem.title} – ${item.title}` : item.title
-				);
-				if (subitem && subitem.emoji && subitem.emoji !== '└') {
+				let title: string;
+				if (
+					item.title ===
+					config.pages.find(configPage => configPage.path === '')
+						.title
+				) {
+					title = config.title;
+				} else {
+					title = config.titleTemplate.replace(
+						'%title%',
+						config.title
+					);
+					title = title.replace(
+						'%pageTitle%',
+						subitem
+							? `${subitem.title} – ${item.title}`
+							: item.title
+					);
+				}
+				this.titleService.setTitle(title);
+
+				if (subitem && subitem.emoji) {
 					this.favIcon.href = this.getEmojiIconText(subitem.emoji);
-				} else if (item.emoji && item.emoji !== '└') {
+				} else if (item && item.emoji) {
 					this.favIcon.href = this.getEmojiIconText(item.emoji);
 				} else {
 					this.favIcon.href = this.getEmojiIconText('7️⃣');
 				}
-				this.titleService.setTitle(title);
 			}
 
 			if (paths[0] !== this.currentExpand) {
@@ -108,10 +114,14 @@ export class AppComponent implements OnInit {
 			const hashs = this.router.url.split('#');
 			if (hashs.length === 2 && this.init) {
 				setTimeout(() => {
-					const element = document.querySelector(`#${hashs[1]}`);
-					if (element) {
-						this.init = false;
-						element.scrollIntoView({ behavior: 'smooth' });
+					try {
+						const element = document.querySelector(`#${hashs[1]}`);
+						if (element) {
+							this.init = false;
+							element.scrollIntoView({ behavior: 'smooth' });
+						}
+					} catch (error) {
+						console.error(error);
 					}
 				}, 500);
 			}

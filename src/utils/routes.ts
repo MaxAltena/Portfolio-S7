@@ -4,7 +4,7 @@ import {
 	PageNotFoundComponent,
 	PagesType,
 } from 'src/app/pages';
-import { BaseItem, Item } from 'src/types';
+import { BasePage, Page } from 'src/types';
 
 const getComponent = (component: string): PagesType => {
 	switch (component) {
@@ -17,83 +17,53 @@ const getComponent = (component: string): PagesType => {
 	}
 };
 
-export const getRoutes = (items: Item[]): Routes => {
+export const getRoutes = (pages: Page[]): Routes => {
 	const routes: Routes = [];
 
-	items.forEach((item: Item) => {
-		if (item.includeInRoutes && item.type) {
+	pages.forEach((page: Page) => {
+		if (page.type) {
 			routes.push({
-				path: item.path,
-				component: getComponent(item.type),
+				path: page.path,
+				component: getComponent(page.type),
 			});
 		}
 
-		if (item.redirects) {
-			item.redirects.forEach((redirect: string) => {
+		if (page.redirects) {
+			page.redirects.forEach((redirect: string) => {
 				routes.push({
 					path: redirect,
-					redirectTo: item.path,
+					redirectTo: page.path,
 				});
 			});
 		}
 
-		if (item.children) {
-			item.children.forEach((child: BaseItem) => {
-				if (child.includeInRoutes && child.type) {
+		if (page.children) {
+			page.children.forEach((childPage: BasePage) => {
+				if (childPage.type) {
 					routes.push({
-						path: child.path,
-						component: getComponent(child.type),
+						path: `${page.path}/${childPage.path}`,
+						component: getComponent(childPage.type),
 					});
 					routes.push({
-						path: `${item.path}/${child.path}`,
-						component: getComponent(child.type),
+						path: childPage.path,
+						redirectTo: `${page.path}/${childPage.path}`,
 					});
 				}
 
-				if (child.redirects) {
-					child.redirects.forEach((redirect: string) => {
+				if (childPage.redirects) {
+					childPage.redirects.forEach((redirect: string) => {
 						routes.push({
 							path: redirect,
-							redirectTo: child.path,
+							redirectTo: `${page.path}/${childPage.path}`,
 						});
 						routes.push({
-							path: `${item.path}/${redirect}`,
-							redirectTo: `${item.path}/${child.path}`,
+							path: `${page.path}/${redirect}`,
+							redirectTo: `${page.path}/${childPage.path}`,
 						});
 					});
 				}
 			});
 		}
-
-		// if (item.redirects) {
-		// 	item.redirects.forEach((redirect: string) => {
-		// 		routes.push({ path: redirect, redirectTo: item.path });
-		// 	});
-		// }
-
-		// if (item.children) {
-		// 	item.children.forEach((page: Item) => {
-		// 		if (page.includeInRoutes && page.component) {
-		// 			routes.push({
-		// 				path: `${item.path}/${page.path}`,
-		// 				component: page.component,
-		// 			});
-		// 		}
-
-		// 		if (page.redirects) {
-		// 			page.redirects.forEach((redirect: string) => {
-		// 				routes.push({
-		// 					path: `${item.path}/${redirect}`,
-		// 					redirectTo: `${item.path}/${page.path}`,
-		// 				});
-		// 				routes.push({
-		// 					path: redirect,
-		// 					redirectTo: `${item.path}/${page.path}`,
-		// 				});
-		// 			});
-		// 		}
-		// 	});
-		// }
 	});
 
 	return routes;

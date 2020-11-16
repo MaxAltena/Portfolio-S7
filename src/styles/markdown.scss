@@ -1,56 +1,5 @@
-@import 'styles';
-
-.content,
-::ng-deep .content {
-	.margin {
-		margin: 32px;
-	}
-
-	.margin-x {
-		margin-right: 32px;
-		margin-left: 32px;
-	}
-
-	.margin-y {
-		margin-top: 32px;
-		margin-bottom: 32px;
-	}
-
-	.important {
-		border-radius: 4px;
-		padding: 16px;
-		border: 2px solid rgba(255, 0, 51, 1);
-		background: rgba(255, 0, 51, 0.2);
-	}
-
-	.table-of-contents,
-	.table-of-items,
-	.table-of-subjects {
-		font-weight: bold;
-	}
-
-	ol,
-	ul {
-		li {
-			margin: 6px 0;
-		}
-	}
-
-	p {
-		line-height: 1.672;
-		letter-spacing: 0.16px;
-	}
-
-	h2,
-	h3,
-	h4,
-	h5,
-	h6 {
-		color: map-get($Portfolio-S7-primary, 700);
-		margin: 0;
-		padding: 0;
-	}
-
+.markdown,
+::ng-deep .markdown {
 	img {
 		max-width: 90%;
 		margin: 16px 5%;
@@ -74,43 +23,5 @@
 		min-height: 400px;
 		height: 50vh;
 		max-height: 800px;
-	}
-
-	code {
-		position: relative;
-		margin: 0 5px;
-
-		&::after {
-			content: '';
-			z-index: -1;
-			position: absolute;
-			background: black;
-			opacity: 0.15;
-			border-radius: 4px;
-			width: calc(100% + 8px);
-			height: calc(100% + 6px);
-			top: -3px;
-			left: -4px;
-			right: -3px;
-			bottom: -4px;
-		}
-	}
-
-	a {
-		cursor: pointer;
-		color: black;
-		transition: color 100ms ease-in-out;
-		text-decoration-color: map-get($Portfolio-S7-accent, 500);
-		text-decoration-style: underline;
-		font-weight: bold;
-
-		&:hover,
-		&:active {
-			color: map-get($Portfolio-S7-accent, 500);
-		}
-	}
-
-	.strike-through {
-		text-decoration-line: line-through;
 	}
 }

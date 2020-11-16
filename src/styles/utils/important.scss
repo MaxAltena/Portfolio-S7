@@ -1,0 +1,8 @@
+@import '../material';
+
+.important {
+	border-radius: 4px;
+	padding: 16px;
+	border: 2px solid map-get($Portfolio-S7-warn, 500);
+	background: map-get($Portfolio-S7-warn, 100);
+}

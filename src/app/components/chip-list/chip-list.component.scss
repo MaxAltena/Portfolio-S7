@@ -1,0 +1,8 @@
+:host {
+	user-select: none;
+	-webkit-user-drag: none;
+
+	::ng-deep .mat-chip-list-wrapper {
+		margin: 16px -4px;
+	}
+}

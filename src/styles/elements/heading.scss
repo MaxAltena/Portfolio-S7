@@ -1,0 +1,18 @@
+@import '../material';
+
+h1 {
+	font-size: 40px;
+	font-weight: 900;
+	line-height: 48px;
+	letter-spacing: 0.08px;
+	margin: 16px 0;
+	color: black;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: map-get($Portfolio-S7-primary, 700);
+}

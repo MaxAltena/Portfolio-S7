@@ -2,35 +2,39 @@ export interface Config {
 	title: string;
 	titleTemplate: string;
 	defaultURL: string;
+	defaultIframeURL: string;
 	githubURL: string;
-	items: Item[];
+	githubRepoURL: string;
+	pages: Page[];
 }
 
-export interface Item extends BaseItem {
-	children?: BaseItem[];
+export interface Page extends BasePage {
+	children?: BasePage[];
 }
 
-export interface BaseItem {
+export interface BasePage {
 	path: string;
-	type: 'default' | 'iframe' | 'not-found';
+	type: PageType;
 	iframeLocation?: string;
-	includeInRoutes: boolean;
-	includeInNavigation: boolean;
+	excludeFromNavigation?: true;
+	navigationTitle?: string;
 	title: string;
 	icon?: string;
 	emoji?: string;
 	redirects?: string[];
-	pageInfo?: PageInfo;
+	info?: PageInfo;
 }
 
 export interface PageInfo {
-	title?: string;
-	includeEmojiInTitle?: boolean;
+	about?: string;
+	excludeEmoji?: true;
 	iframeLocation?: string;
 	chips?: Chip[];
 	quote?: string;
-	content?: unknown; // TODO: Add this for more dynamic from json loading capabilities?
+	sections?: Section[];
 }
+
+export type PageType = 'default' | 'iframe' | 'subject' | 'not-found';
 
 export type Chip =
 	| 'Human Centered Design'
@@ -47,3 +51,13 @@ export type Chip =
 	| 'Subject'
 	| 'Research'
 	| 'Project';
+
+export type Section =
+	| 'Assignment'
+	| 'Motivation'
+	| 'Approach'
+	| 'Execution'
+	| 'Conclusion'
+	| 'Reflection'
+	| 'Learning outcomes'
+	| 'Responsibility';

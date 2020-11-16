@@ -22,4 +22,5 @@
 -   [ ] Ability to search on tags?
 -   [x] Update title based on current route
 -   [x] Better mobile/tablet experience
--   [ ] Dynamic table of contents depending on content
+-   [x] Dynamic table of contents depending on content
+-   [ ] Pages fully from config?

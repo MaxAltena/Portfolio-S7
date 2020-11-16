@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import config from 'src/config';
-import { BaseItem, Item } from 'src/types';
+import { BasePage, Page } from 'src/types';
 
 @Component({
 	selector: 'app-page-dynamic',
@@ -10,14 +10,14 @@ import { BaseItem, Item } from 'src/types';
 	styleUrls: ['./dynamic.page.scss'],
 })
 export class PageDynamicComponent {
-	item: Item | BaseItem;
+	page: Page | BasePage;
 	paths: string[];
-	parent: Item;
+	parent: Page;
 	router: Router;
 	sanitizer: DomSanitizer;
 
 	getIframeURL = (): SafeUrl => {
-		let { iframeLocation } = this.item.pageInfo;
+		let { iframeLocation } = this.page.info;
 
 		if (!iframeLocation) {
 			iframeLocation = config.defaultURL;
@@ -27,30 +27,14 @@ export class PageDynamicComponent {
 	};
 
 	getIframeTitle = (): string => {
-		if (this.item.pageInfo.title) {
-			return this.item.pageInfo.title.toLowerCase();
-		} else {
-			return this.item.title.toLowerCase();
-		}
+		return this.page.title.toLowerCase();
 	};
 
-	getHeading = (): string => {
-		if (this.item.pageInfo) {
-			if (this.item.pageInfo.title) {
-				if (this.item.pageInfo.includeEmojiInTitle) {
-					return `${this.item.emoji} ${this.item.pageInfo.title}`;
-				} else {
-					return this.item.pageInfo.title;
-				}
-			} else {
-				if (this.item.pageInfo.includeEmojiInTitle) {
-					return `${this.item.emoji} ${this.item.title}`;
-				} else {
-					return this.item.title;
-				}
-			}
+	getPageLink = (subpage: Page): string => {
+		if (subpage.emoji) {
+			return `${subpage.emoji} ${subpage.title}`;
 		} else {
-			return this.item.title;
+			return subpage.title;
 		}
 	};
 
@@ -66,8 +50,8 @@ export class PageDynamicComponent {
 			});
 			this.paths = paths;
 
-			const first = config.items.find(
-				(item: Item) => item.path === paths[0]
+			const first = config.pages.find(
+				(page: Page) => page.path === paths[0]
 			);
 
 			if (paths.length > 1) {
@@ -77,21 +61,21 @@ export class PageDynamicComponent {
 			if (first) {
 				if (first.children) {
 					const second = first.children.find(
-						(item: Item) => item.path === paths[1]
+						(page: Page) => page.path === paths[1]
 					);
 
 					if (second) {
-						if (this.item !== second) {
-							this.item = second;
+						if (this.page !== second) {
+							this.page = second;
 						}
 					} else {
-						if (this.item !== first) {
-							this.item = first;
+						if (this.page !== first) {
+							this.page = first;
 						}
 					}
 				} else {
-					if (this.item !== first) {
-						this.item = first;
+					if (this.page !== first) {
+						this.page = first;
 					}
 				}
 			}
