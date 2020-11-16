@@ -1,18 +1,18 @@
-name: Deploy
+name: 🚀 Deploy
 on:
   push:
     branches:
       - development
 jobs:
   deploy:
-    name: Deploy
+    name: 🎉 Deploy
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repo
+      - name: 🚚 Checkout repo
         uses: actions/checkout@master
         with:
           fetch-depth: 2
-      - name: Use node.js 12.x
+      - name: Use Node.js 12.x
         uses: actions/setup-node@master
         with:
           node-version: "12.x"
@@ -29,16 +29,16 @@ jobs:
         run: npm install
       - name: Lint project
         run: npm run lint
-      - name: Build project
+      - name: 🔨 Build project
         run: |
           npm run build:prod --if-present
           git reset --hard
-      - name: FTP deploy
+      - name: 📂 FTP deploy
         uses: SamKirkland/FTP-Deploy-Action@master
         with:
-          ftp-server: ${{ secrets.FTP_SERVER }}${{ secrets.FTP_PATH }}
-          ftp-username: ${{ secrets.FTP_USERNAME }}
-          ftp-password: ${{ secrets.FTP_PASSWORD }}
+          server: ${{ secrets.FTP_SERVER }}${{ secrets.FTP_PATH }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
           local-dir: dist/Portfolio-S7/
       - name: Archive build artifact
         uses: actions/upload-artifact@master
