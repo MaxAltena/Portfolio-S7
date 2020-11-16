@@ -34,12 +34,12 @@ const materialModules = [
 
 import { AppComponent } from 'src/app/app.component';
 import pages from 'src/app/pages';
-import components from 'src/app/components';
+import components, { FixedBannerComponent } from 'src/app/components';
 import { AppRoutingModule } from 'src/app/routing/app-routing.module';
 import { environment } from 'src/environments/environment';
 
 @NgModule({
-	declarations: [AppComponent, ...pages, ...components],
+	declarations: [AppComponent, ...pages, ...components, FixedBannerComponent],
 	imports: [
 		BrowserModule,
 		BrowserAnimationsModule,

@@ -28,5 +28,9 @@
 				text-align: center;
 			}
 		}
+
+		&.isNavOpened {
+			width: 300px;
+		}
 	}
 }

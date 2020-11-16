@@ -7,4 +7,5 @@ import { Component, Input } from '@angular/core';
 })
 export class FixedBannerComponent {
 	@Input() isSmallDevice: boolean;
+	@Input() isNavOpened: boolean;
 }
