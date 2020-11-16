@@ -12,11 +12,12 @@ jobs:
         uses: actions/checkout@master
         with:
           fetch-depth: 2
-      - name: Use Node.js 12.x
+      - name: 🚨 Use Node.js 12
         uses: actions/setup-node@master
         with:
-          node-version: "12.x"
-      - name: Cache node modules
+          node-version: 12
+          check-latest: true
+      - name: 📂 Cache node modules
         uses: actions/cache@master
         with:
           path: node_modules
@@ -25,23 +26,22 @@ jobs:
             ${{ runner.OS }}-build-${{ env.cache-name }}-
             ${{ runner.OS }}-build-
             ${{ runner.OS }}-
-      - name: Install dependencies
+      - name: 📂 Install dependencies
         run: npm install
-      - name: Lint project
+      - name: 🚨 Lint project
         run: npm run lint
       - name: 🔨 Build project
-        run: |
-          npm run build:prod --if-present
-          git reset --hard
-      - name: 📂 FTP deploy
-        uses: SamKirkland/FTP-Deploy-Action@master
+        run: npm run build:prod
+      - name: ⤴ FTP deploy
+        uses: SamKirkland/FTP-Deploy-Action@4.0.0
         with:
-          server: ${{ secrets.FTP_SERVER }}${{ secrets.FTP_PATH }}
+          server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: dist/Portfolio-S7/
-      - name: Archive build artifact
+          server-dir: ${{ secrets.FTP_BASE_PATH }}${{ secrets.FTP_PATH }}
+          local-dir: ./dist/Portfolio-S7/
+      - name: 📂 Archive build artifact
         uses: actions/upload-artifact@master
         with:
           name: build
-          path: dist/Portfolio-S7/
+          path: ./dist/Portfolio-S7/
