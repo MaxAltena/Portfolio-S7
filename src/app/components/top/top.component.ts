@@ -12,7 +12,7 @@ export class TopComponent implements OnInit {
 	chips: Chip[];
 	quote: string;
 
-	ngOnInit() {
+	ngOnInit(): void {
 		this.chips = this.page?.info?.chips;
 		this.quote = this.page?.info?.quote;
 
