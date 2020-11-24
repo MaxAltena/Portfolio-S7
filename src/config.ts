@@ -3,7 +3,7 @@ import { Config } from 'src/types';
 const config: Config = {
 	title: 'Portfolio S7 – Max Altena',
 	titleTemplate: '%pageTitle% – %title%',
-	defaultURL: 'https://portfolio.maxaltena.com/S7/',
+	defaultURL: 'https://portfolio-s7.maxaltena.com/',
 	defaultIframeURL: 'https://maxaltena.com/',
 	githubURL: 'https://github.com/MaxAltena/',
 	githubRepoURL: 'https://github.com/MaxAltena/Portfolio-S7/',
