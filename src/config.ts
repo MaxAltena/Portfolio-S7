@@ -156,7 +156,7 @@ const config: Config = {
 					path: 'personal-manifesto-website',
 					title: 'Personal Manifesto (Website)',
 					info: {
-						iframeLocation: 'https://maxaltena.com/manifest.json/',
+						iframeLocation: 'https://manifest.maxaltena.com/',
 					},
 				},
 				{
