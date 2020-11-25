@@ -24,12 +24,12 @@ Find it on [https://portfolio-s7.maxaltena.com/][link:portfolio-s7]!
 -   [ ] Pages fully from config?
 
 [img:netlify-status]: https://img.shields.io/netlify/a93f73fc-9755-44a0-9d99-c6ddeca38b91
-[link:netlify-status]: https://app.netlify.com/sites/maxaltena/deploys
+[link:netlify-status]: https://app.netlify.com/sites/portfolio-s7-maxaltena-com/deploys
 [img:uptimerobot-status]: https://img.shields.io/uptimerobot/status/m786475165-44ecbd1ad3f655df23079514
 [img:uptimerobot-ratio]: https://img.shields.io/uptimerobot/ratio/m786475165-44ecbd1ad3f655df23079514
-[link:uptimerobot-status]: https://status.maxaltena.com/786475165
+[link:uptimerobot-status]: https://status-school.maxaltena.com/786475165
 [img:snyk]: https://img.shields.io/snyk/vulnerabilities/github/MaxAltena/Portfolio-S7
-[link:snyk]: https://app.snyk.io/org/maxaltena/project/263b9403-a548-4aa5-80a2-fae4ac0674b6
+[link:snyk]: https://app.snyk.io/org/maxaltena/project/6511ce6c-6be1-4a3e-990d-ff50837072a7
 [img:github-version]: https://img.shields.io/github/package-json/v/MaxAltena/Portfolio-S7
 [link:github-version]: https://github.com/MaxAltena/Portfolio-S7
 [img:github-issues]: https://img.shields.io/github/issues/MaxAltena/Portfolio-S7
