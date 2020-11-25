@@ -24,7 +24,7 @@ Find it on [https://portfolio-s7.maxaltena.com/][link:portfolio-s7]!
 -   [ ] Pages fully from config?
 
 [img:netlify-status]: https://img.shields.io/netlify/a93f73fc-9755-44a0-9d99-c6ddeca38b91
-[link:netlify-status]: https://app.netlify.com/sites/maxaltena/deploys
+[link:netlify-status]: https://app.netlify.com/sites/portfolio-s7-maxaltena-com/deploys
 [img:uptimerobot-status]: https://img.shields.io/uptimerobot/status/m786475165-44ecbd1ad3f655df23079514
 [img:uptimerobot-ratio]: https://img.shields.io/uptimerobot/ratio/m786475165-44ecbd1ad3f655df23079514
 [link:uptimerobot-status]: https://status-school.maxaltena.com/786475165
