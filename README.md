@@ -27,7 +27,7 @@ Find it on [https://portfolio-s7.maxaltena.com/][link:portfolio-s7]!
 [link:netlify-status]: https://app.netlify.com/sites/maxaltena/deploys
 [img:uptimerobot-status]: https://img.shields.io/uptimerobot/status/m786475165-44ecbd1ad3f655df23079514
 [img:uptimerobot-ratio]: https://img.shields.io/uptimerobot/ratio/m786475165-44ecbd1ad3f655df23079514
-[link:uptimerobot-status]: https://stats.uptimerobot.com/YQqzoU311Z/786475165
+[link:uptimerobot-status]: https://status-school.maxaltena.com/786475165
 [img:snyk]: https://img.shields.io/snyk/vulnerabilities/github/MaxAltena/Portfolio-S7
 [link:snyk]: https://app.snyk.io/org/maxaltena/project/6511ce6c-6be1-4a3e-990d-ff50837072a7
 [img:github-version]: https://img.shields.io/github/package-json/v/MaxAltena/Portfolio-S7
