@@ -9,7 +9,9 @@
 				chip === 'Other'
 			"
 		>
-			<mat-chip color="accent" selected>{{ chip }}</mat-chip>
+			<mat-chip color="accent" selected (click)="navigateChip(chip)">{{
+				chip
+			}}</mat-chip>
 		</div>
 		<div
 			*ngIf="
@@ -19,7 +21,9 @@
 				chip === 'Additive Industries'
 			"
 		>
-			<mat-chip color="primary" selected>{{ chip }}</mat-chip>
+			<mat-chip color="primary" selected (click)="navigateChip(chip)">{{
+				chip
+			}}</mat-chip>
 		</div>
 		<div
 			*ngIf="
@@ -34,7 +38,7 @@
 				chip !== 'Additive Industries'
 			"
 		>
-			<mat-chip>{{ chip }}</mat-chip>
+			<mat-chip (click)="navigateChip(chip)">{{ chip }}</mat-chip>
 		</div>
 	</div>
 </mat-chip-list>

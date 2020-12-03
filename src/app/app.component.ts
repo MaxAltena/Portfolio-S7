@@ -65,17 +65,26 @@ export class AppComponent implements OnInit {
 
 			if (this.searchInput) {
 				this.searchInput.focus();
+				this.searchInput.select();
 			}
 		}
 	}
 
-	onSearchSubmit(event?: MatAutocompleteActivatedEvent): void {
+	onSearchSubmit(event?): void {
+		if (event) {
+			if (event.preventDefault) {
+				event.preventDefault();
+			}
+		}
+
 		this.alert("This doesn't work yet...");
 	}
 
 	alert(text: string): void {
 		this.snackBar.open(text, 'OK', {
 			duration: 4000,
+			horizontalPosition: 'end',
+			verticalPosition: 'bottom',
 		});
 	}
 
@@ -124,6 +133,8 @@ export class AppComponent implements OnInit {
 			startWith(''),
 			map(value => this._filter(value))
 		);
+
+		this.control.valueChanges.subscribe(() => this.onSearchSubmit());
 
 		if (this.init) {
 			this.isSmallDevice = window.innerWidth <= 700;

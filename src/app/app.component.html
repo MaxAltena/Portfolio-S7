@@ -4,13 +4,18 @@
 	</button>
 	<h1>{{ config.title }}</h1>
 	<span class="spacer"></span>
-	<form class="search search-form" (ngSubmit)="onSearchSubmit()">
+	<form
+		id="searchForm"
+		class="search search-form"
+		(ngSubmit)="onSearchSubmit($event)"
+	>
 		<input
 			type="text"
 			placeholder="Search for anything"
 			id="searchInput"
 			[formControl]="control"
 			[matAutocomplete]="auto"
+			(focus)="onSearchSubmit($event)"
 		/>
 		<div class="search-icon"></div>
 		<div class="keys">
@@ -19,7 +24,7 @@
 		</div>
 		<mat-autocomplete
 			#auto="matAutocomplete"
-			(optionSelected)="onSearchSubmit()"
+			(optionSelected)="onSearchSubmit($event)"
 		>
 			<mat-option
 				*ngFor="let searchItem of filteredSearchItems | async"
