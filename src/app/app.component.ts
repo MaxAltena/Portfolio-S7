@@ -1,4 +1,7 @@
 import { Component, HostListener, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
+import { MatAutocompleteActivatedEvent } from '@angular/material/autocomplete';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Title } from '@angular/platform-browser';
 import {
 	ActivatedRoute,
@@ -6,6 +9,8 @@ import {
 	Router,
 	RouterOutlet,
 } from '@angular/router';
+import { Observable } from 'rxjs';
+import { startWith, map } from 'rxjs/operators';
 import config from 'src/config';
 import { BasePage } from 'src/types';
 import { getGitVariables } from 'src/utils/git-config';
@@ -29,6 +34,10 @@ export class AppComponent implements OnInit {
 	currentExpand: string | null = null;
 	favIcon: HTMLLinkElement = document.querySelector('#appIcon');
 	isSmallDevice = false;
+	control = new FormControl();
+	searchInput: HTMLInputElement = document.querySelector('#searchInput');
+	searchItems: string[] = this.getSearchItems();
+	filteredSearchItems: Observable<string[]>;
 
 	prepareRoute(outlet: RouterOutlet): ActivatedRoute | '' {
 		return outlet.isActivated ? outlet.activatedRoute : '';
@@ -47,9 +56,75 @@ export class AppComponent implements OnInit {
 		this.isSmallDevice = event.target.innerWidth <= 700;
 	}
 
-	constructor(private router: Router, private titleService: Title) {}
+	@HostListener('document:keydown', ['$event'])
+	onKeyDown(event: KeyboardEvent): void {
+		if (event.altKey && event.key === 'k') {
+			if (!this.searchInput) {
+				this.searchInput = document.querySelector('#searchInput');
+			}
+
+			if (this.searchInput) {
+				this.searchInput.focus();
+			}
+		}
+	}
+
+	onSearchSubmit(event?: MatAutocompleteActivatedEvent): void {
+		this.alert("This doesn't work yet...");
+	}
+
+	alert(text: string): void {
+		this.snackBar.open(text, 'OK', {
+			duration: 4000,
+		});
+	}
+
+	getSearchItems(): string[] {
+		const config = this.config;
+		const result = new Set<string>();
+
+		config.pages.forEach(page => {
+			if (page.type !== 'not-found') {
+				if (page.navigationTitle) {
+					result.add(page.navigationTitle);
+				} else {
+					result.add(page.title);
+				}
+
+				if (page.info.chips) {
+					page.info.chips.forEach(chip => result.add(chip));
+				}
+
+				if (page.children) {
+					page.children.forEach(child => {
+						if (child.navigationTitle) {
+							result.add(child.navigationTitle);
+						} else {
+							result.add(child.title);
+						}
+						if (child.info.chips) {
+							child.info.chips.forEach(chip => result.add(chip));
+						}
+					});
+				}
+			}
+		});
+
+		return [...result];
+	}
+
+	constructor(
+		private router: Router,
+		private titleService: Title,
+		private snackBar: MatSnackBar
+	) {}
 
 	ngOnInit(): void {
+		this.filteredSearchItems = this.control.valueChanges.pipe(
+			startWith(''),
+			map(value => this._filter(value))
+		);
+
 		if (this.init) {
 			this.isSmallDevice = window.innerWidth <= 700;
 		}
@@ -126,5 +201,16 @@ export class AppComponent implements OnInit {
 				}, 500);
 			}
 		});
+	}
+
+	private _filter(value: string): string[] {
+		const filterValue = this._normalizeValue(value);
+		return this.searchItems.filter(street =>
+			this._normalizeValue(street).includes(filterValue)
+		);
+	}
+
+	private _normalizeValue(value: string): string {
+		return value.toLowerCase().replace(/\s/g, '');
 	}
 }
