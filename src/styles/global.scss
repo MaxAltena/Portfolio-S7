@@ -13,3 +13,39 @@ body {
 	padding: 0;
 	font-family: Roboto, 'Helvetica Neue', sans-serif;
 }
+
+.search-autocomplete-result {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	mat-chip-list {
+		outline: none;
+		user-select: none;
+	}
+
+	.key {
+		display: none;
+		visibility: hidden;
+		pointer-events: none;
+	}
+}
+
+.mat-active .search-autocomplete-result .key {
+	display: block;
+	visibility: visible;
+	color: rgba(0, 0, 0, 0.6);
+	padding: 0.2em 0.3em;
+	font: normal 0.7em/1.2 monospace;
+	text-align: center;
+	text-decoration: none;
+	min-width: 1em;
+	border-radius: 0.3em;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	background: rgba(255, 255, 255, 0.2);
+
+	@media only screen and (max-width: 999px) {
+		display: none;
+		visibility: hidden;
+	}
+}

@@ -2,7 +2,7 @@
 
 a:not(.mat-menu-item) {
 	cursor: pointer;
-	color: black;
+	color: black !important;
 	transition: color 100ms ease-in-out;
 	text-decoration-color: map-get($Portfolio-S7-accent, 500);
 	text-decoration-style: underline;
@@ -10,6 +10,6 @@ a:not(.mat-menu-item) {
 
 	&:hover,
 	&:active {
-		color: map-get($Portfolio-S7-accent, 500);
+		color: map-get($Portfolio-S7-accent, 500) !important;
 	}
 }

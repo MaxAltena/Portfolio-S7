@@ -61,3 +61,12 @@ export type Section =
 	| 'Reflection'
 	| 'Learning outcomes'
 	| 'Responsibility';
+
+export interface SearchItem {
+	value: string;
+	text: string;
+	type: SearchItemType;
+	page?: BasePage;
+}
+
+export type SearchItemType = 'page' | 'chip';

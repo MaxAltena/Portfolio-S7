@@ -4,6 +4,65 @@
 	</button>
 	<h1>{{ config.title }}</h1>
 	<span class="spacer"></span>
+	<form
+		id="searchForm"
+		class="search search-form"
+		(ngSubmit)="onSearchSubmit($event)"
+		[class.mobile]="isSmallDevice"
+		[class.mobileOpened]="searchMobileOpen"
+	>
+		<input
+			type="text"
+			placeholder="Search for anything"
+			id="searchInput"
+			[formControl]="control"
+			[matAutocomplete]="auto"
+		/>
+		<div class="search-icon"></div>
+		<div class="keys">
+			<div class="key">alt</div>
+			<div class="key">k</div>
+		</div>
+		<mat-autocomplete
+			autoActiveFirstOption
+			#auto="matAutocomplete"
+			(optionSelected)="onSearchSubmit($event)"
+		>
+			<mat-option
+				*ngFor="let searchItem of searchItemsFiltered"
+				[value]="searchItem.value"
+			>
+				<div
+					*ngIf="searchItem.type === 'chip'"
+					class="search-autocomplete-result"
+				>
+					<mat-chip-list>
+						<app-chip
+							[chip]="searchItem.text"
+							[navigate]="false"
+							[selectable]="false"
+						></app-chip>
+					</mat-chip-list>
+					<span class="key">↵</span>
+				</div>
+				<div
+					*ngIf="searchItem.type === 'page'"
+					class="search-autocomplete-result"
+				>
+					{{ searchItem.text }}
+					<span class="key">↵</span>
+				</div>
+			</mat-option>
+		</mat-autocomplete>
+	</form>
+	<span class="spacer"></span>
+	<button
+		mat-icon-button
+		class="search-button"
+		(click)="searchMobileOpen = true"
+	>
+		<mat-icon>search</mat-icon>
+	</button>
 	<button
 		mat-icon-button
 		[matMenuTriggerFor]="gitHubMenu"

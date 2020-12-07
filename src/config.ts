@@ -44,7 +44,7 @@ const config: Config = {
 				{
 					type: 'default',
 					path: 'design-probes',
-					title: 'Design probes',
+					title: 'Design Probes',
 					emoji: '⚗️',
 					info: {
 						quote: `Creating probes to probe our own behaviour. Something I haven't done as of yet.`,
@@ -119,7 +119,7 @@ const config: Config = {
 				{
 					type: 'default',
 					path: 'critical-problems',
-					title: 'Critical problems',
+					title: 'Critical Problems',
 					emoji: '⚠️',
 					info: {
 						quote: `What are things I am bothered with? Let's find out how much I hate and care about things.`,
@@ -149,14 +149,6 @@ const config: Config = {
 							'Learning outcomes',
 							'Responsibility',
 						],
-					},
-				},
-				{
-					type: 'iframe',
-					path: 'personal-manifesto-website',
-					title: 'Personal Manifesto (Website)',
-					info: {
-						iframeLocation: 'https://manifest.maxaltena.com/',
 					},
 				},
 				{
@@ -199,15 +191,6 @@ const config: Config = {
 							'Learning outcomes',
 							'Responsibility',
 						],
-					},
-				},
-				{
-					type: 'iframe',
-					path: 'concept-digital-detox-prototype',
-					title: 'Concept: Digital Detox (Prototype)',
-					info: {
-						iframeLocation:
-							'https://docs.google.com/presentation/d/e/2PACX-1vSTewz7pPiwd8jXi8mOflPkNETf5sLsnkl9TOr1Q5nOxTnSSy3qZ8XQVF_fnS7txVTv5H1zBaGounQ6/embed?start=true&loop=true&delayms=1000',
 					},
 				},
 			],
@@ -268,6 +251,24 @@ const config: Config = {
 					path: 'protaganist',
 					title: 'Protaganist',
 					emoji: '🚶',
+					info: {
+						quote: `...`,
+						chips: ['Story Creation', 'Personal', 'Assignment'],
+						sections: [
+							'Assignment',
+							'Approach',
+							'Execution',
+							'Conclusion',
+							'Reflection',
+							'Responsibility',
+						],
+					},
+				},
+				{
+					type: 'default',
+					path: 'story',
+					title: 'Story',
+					emoji: '📚',
 					info: {
 						quote: `...`,
 						chips: ['Story Creation', 'Personal', 'Assignment'],

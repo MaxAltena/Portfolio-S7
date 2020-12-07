@@ -3,20 +3,24 @@
 import { PageHomeComponent } from './home/home.page';
 import { PageDynamicComponent } from './dynamic/dynamic.page';
 import { PageNotFoundComponent } from './not-found/not-found.page';
+import { PageSearchComponent } from './search/search.page';
 
 export * from './home/home.page';
 export * from './dynamic/dynamic.page';
 export * from './not-found/not-found.page';
+export * from './search/search.page';
 
 export type GeneralPagesType =
 	| typeof PageHomeComponent
 	| typeof PageDynamicComponent
-	| typeof PageNotFoundComponent;
+	| typeof PageNotFoundComponent
+	| typeof PageSearchComponent;
 
 export const generalPages = [
 	PageHomeComponent,
 	PageDynamicComponent,
 	PageNotFoundComponent,
+	PageSearchComponent,
 ];
 
 import { PageDesignProbesComponent } from './human-centered-design/design-probes/design-probes.page';
@@ -64,19 +68,23 @@ export const cdPages = [
 import { PagePechaKuchaComponent } from './story-creation/pecha-kucha/pecha-kucha.page';
 import { PageResearchStorytellingEmotionComponent } from './story-creation/research-storytelling-emotion/research-storytelling-emotion.page';
 import { PageProtaganistComponent } from './story-creation/protaganist/protaganist.page';
+import { PageStoryComponent } from './story-creation/story/story.page';
 
 export * from './story-creation/pecha-kucha/pecha-kucha.page';
 export * from './story-creation/research-storytelling-emotion/research-storytelling-emotion.page';
 export * from './story-creation/protaganist/protaganist.page';
+export * from './story-creation/story/story.page';
 
 export type SCPagesType =
 	| typeof PagePechaKuchaComponent
 	| typeof PageResearchStorytellingEmotionComponent
+	| typeof PageStoryComponent
 	| typeof PageProtaganistComponent;
 
 export const scPages = [
 	PagePechaKuchaComponent,
 	PageResearchStorytellingEmotionComponent,
+	PageStoryComponent,
 	PageProtaganistComponent,
 ];
 
