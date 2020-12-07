@@ -1,0 +1,36 @@
+<app-header></app-header>
+
+<div class="page-content margin-x">
+	<div class="container">
+		<h1>Search results for '{{ term }}'</h1>
+
+		<mat-divider class="margin-y"></mat-divider>
+
+		<div *ngIf="results.length === 0" class="no-results">
+			<p>
+				<strong>
+					Max is sorry as he didn't find any results matching your
+					search 😢</strong
+				>
+			</p>
+			<p>
+				<small>Maybe try one of the following?</small>
+			</p>
+			<mat-chip-list>
+				<app-chip chip="Human Centered Design"></app-chip>
+				<app-chip chip="Critical Design"></app-chip>
+				<app-chip chip="Story Creation"></app-chip>
+				<app-chip chip="Media Theory"></app-chip>
+			</mat-chip-list>
+		</div>
+		<div *ngIf="results.length > 0" class="results">
+			<div *ngFor="let result of results">
+				<a routerLink="..{{ result.fullPath }}" class="result"
+					><h4>{{ result.emoji }} {{ result.title }}</h4>
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<app-footer></app-footer>

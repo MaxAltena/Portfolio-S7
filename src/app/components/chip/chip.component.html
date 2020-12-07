@@ -1,0 +1,43 @@
+<div
+	*ngIf="
+		chip === 'Human Centered Design' ||
+		chip === 'Critical Design' ||
+		chip === 'Media Theory' ||
+		chip === 'Story Creation' ||
+		chip === 'Other'
+	"
+	[class.selectable]="selectable"
+>
+	<mat-chip color="accent" selected (click)="navigateChip()">{{
+		chip
+	}}</mat-chip>
+</div>
+<div
+	*ngIf="
+		chip === 'Personal' ||
+		chip === 'Duo' ||
+		chip === 'Group' ||
+		chip === 'Additive Industries'
+	"
+	[class.selectable]="selectable"
+>
+	<mat-chip color="primary" selected (click)="navigateChip()">{{
+		chip
+	}}</mat-chip>
+</div>
+<div
+	*ngIf="
+		chip !== 'Human Centered Design' &&
+		chip !== 'Critical Design' &&
+		chip !== 'Media Theory' &&
+		chip !== 'Story Creation' &&
+		chip !== 'Other' &&
+		chip !== 'Personal' &&
+		chip !== 'Duo' &&
+		chip !== 'Group' &&
+		chip !== 'Additive Industries'
+	"
+	[class.selectable]="selectable"
+>
+	<mat-chip (click)="navigateChip()">{{ chip }}</mat-chip>
+</div>

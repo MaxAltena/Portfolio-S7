@@ -8,6 +8,8 @@
 		id="searchForm"
 		class="search search-form"
 		(ngSubmit)="onSearchSubmit($event)"
+		[class.mobile]="isSmallDevice"
+		[class.mobileOpened]="searchMobileOpen"
 	>
 		<input
 			type="text"
@@ -15,7 +17,6 @@
 			id="searchInput"
 			[formControl]="control"
 			[matAutocomplete]="auto"
-			(focus)="onSearchSubmit($event)"
 		/>
 		<div class="search-icon"></div>
 		<div class="keys">
@@ -23,14 +24,34 @@
 			<div class="key">k</div>
 		</div>
 		<mat-autocomplete
+			autoActiveFirstOption
 			#auto="matAutocomplete"
 			(optionSelected)="onSearchSubmit($event)"
 		>
 			<mat-option
-				*ngFor="let searchItem of filteredSearchItems | async"
-				[value]="searchItem"
+				*ngFor="let searchItem of searchItemsFiltered"
+				[value]="searchItem.value"
 			>
-				{{ searchItem }}
+				<div
+					*ngIf="searchItem.type === 'chip'"
+					class="search-autocomplete-result"
+				>
+					<mat-chip-list>
+						<app-chip
+							[chip]="searchItem.text"
+							[navigate]="false"
+							[selectable]="false"
+						></app-chip>
+					</mat-chip-list>
+					<span class="key">↵</span>
+				</div>
+				<div
+					*ngIf="searchItem.type === 'page'"
+					class="search-autocomplete-result"
+				>
+					{{ searchItem.text }}
+					<span class="key">↵</span>
+				</div>
 			</mat-option>
 		</mat-autocomplete>
 	</form>
@@ -38,7 +59,7 @@
 	<button
 		mat-icon-button
 		class="search-button"
-		(click)="alert('Not able to search this way, yet!')"
+		(click)="searchMobileOpen = true"
 	>
 		<mat-icon>search</mat-icon>
 	</button>

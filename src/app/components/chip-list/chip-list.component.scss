@@ -2,6 +2,10 @@
 	user-select: none;
 	-webkit-user-drag: none;
 
+	* {
+		outline: none;
+	}
+
 	::ng-deep .mat-chip-list-wrapper {
 		margin: 16px -4px;
 	}

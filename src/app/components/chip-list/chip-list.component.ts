@@ -8,13 +8,4 @@ import { Chip } from 'src/types';
 })
 export class ChipListComponent {
 	@Input() chips: Chip[];
-
-	navigateChip(chip: Chip): void {
-		const searchInput: HTMLInputElement = document.querySelector(
-			'#searchInput'
-		);
-		searchInput.value = `chip:${chip}`;
-		searchInput.focus();
-		searchInput.select();
-	}
 }

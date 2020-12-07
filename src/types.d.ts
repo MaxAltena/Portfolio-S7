@@ -63,7 +63,10 @@ export type Section =
 	| 'Responsibility';
 
 export interface SearchItem {
+	value: string;
 	text: string;
-	type: 'page' | 'chip';
+	type: SearchItemType;
 	page?: BasePage;
 }
+
+export type SearchItemType = 'page' | 'chip';

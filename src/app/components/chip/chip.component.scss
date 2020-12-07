@@ -1,0 +1,9 @@
+:host {
+	user-select: none;
+	-webkit-user-drag: none;
+	pointer-events: none;
+
+	.selectable {
+		pointer-events: auto;
+	}
+}

@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import {
 	PageDynamicComponent,
 	PageNotFoundComponent,
+	PageSearchComponent,
 	PagesType,
 } from 'src/app/pages';
 import { BasePage, Page } from 'src/types';
@@ -18,7 +19,14 @@ const getComponent = (component: string): PagesType => {
 };
 
 export const getRoutes = (pages: Page[]): Routes => {
-	const routes: Routes = [];
+	const routes: Routes = [
+		{
+			path: 'search',
+			component: PageSearchComponent,
+		},
+		{ path: 'zoeken', redirectTo: '/search' },
+		{ path: 'zoek', redirectTo: '/search' },
+	];
 
 	pages.forEach((page: Page) => {
 		if (page.type) {

@@ -40,6 +40,7 @@
 			min-width: 150px;
 			max-width: 500px;
 			width: 30vw;
+			z-index: 10;
 
 			> input {
 				box-sizing: border-box;
@@ -142,9 +143,36 @@
 				}
 			}
 
-			@media only screen and (max-width: 999px) {
-				visibility: hidden;
-				pointer-events: none;
+			&.mobile {
+				width: 100%;
+				min-width: 100%;
+				max-width: 100%;
+				height: 64px;
+
+				> input {
+					background-color: white;
+					border-radius: 0;
+					padding-right: 2rem;
+					padding-left: 4rem;
+					font-size: 1.2em;
+				}
+
+				> .search-icon {
+					left: 24px;
+					top: 24px;
+					bottom: 24px;
+					transform: scale(1.6);
+				}
+
+				> .keys {
+					display: none;
+				}
+
+				&:not(.mobileOpened) {
+					display: none;
+					visibility: hidden;
+					pointer-events: none;
+				}
 			}
 		}
 
@@ -152,6 +180,7 @@
 			margin-right: 16px;
 
 			@media only screen and (min-width: 1000px) {
+				display: none;
 				visibility: hidden;
 				pointer-events: none;
 			}

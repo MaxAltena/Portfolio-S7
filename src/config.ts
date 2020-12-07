@@ -264,6 +264,24 @@ const config: Config = {
 						],
 					},
 				},
+				{
+					type: 'default',
+					path: 'story',
+					title: 'Story',
+					emoji: '📚',
+					info: {
+						quote: `...`,
+						chips: ['Story Creation', 'Personal', 'Assignment'],
+						sections: [
+							'Assignment',
+							'Approach',
+							'Execution',
+							'Conclusion',
+							'Reflection',
+							'Responsibility',
+						],
+					},
+				},
 			],
 		},
 		{
