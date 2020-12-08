@@ -1,7 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Subscription } from 'rxjs';
-import { timer } from 'rxjs/internal/observable/timer';
+import { Subscription, timer } from 'rxjs';
 
 @Component({
 	selector: 'app-page-not-found',
