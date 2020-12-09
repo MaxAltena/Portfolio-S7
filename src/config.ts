@@ -38,6 +38,7 @@ const config: Config = {
 			info: {
 				quote: `Sounds a bit egocentric doesn't it? But it is for the better of the user and in the end the human itself... Atleast, that's what they say.`,
 				about: `In the subject HCD there will be learned how to apply the IDEO Human Centered Design (HCD) process to iteratively develop products or services for the Digital Society. The HCD process consists of 3 phases: Inspiration, Ideation and Implementation. During the first iteration of the project it will become familiar with how to apply these steps. Subsequentl the three steps in each of the following three iterations are repeated. Furthermore, workshops focusing on specific methods of prototyping and user testing will be offered in iteration 2-4.`,
+				reflection: `Within the project and during the course of the minor, I learned more about defining more useful research questions as shown within the research documents I've created. With the research I've done, I've used methods which I have independently selected resulting in valuable insights for the project.`,
 				chips: ['Human Centered Design', 'Subject'],
 			},
 			children: [
@@ -55,6 +56,7 @@ const config: Config = {
 							'Execution',
 							'Conclusion',
 							'Reflection',
+							'Learning outcomes',
 							'Responsibility',
 						],
 					},
@@ -76,7 +78,9 @@ const config: Config = {
 							'Approach',
 							'Execution',
 							'Conclusion',
+							'Feedback',
 							'Reflection',
+							'Learning outcomes',
 							'Responsibility',
 						],
 					},
@@ -87,18 +91,20 @@ const config: Config = {
 					title: 'Stakeholder Profiles',
 					emoji: '🧝‍♂️',
 					info: {
-						quote: `...`,
+						quote: `Tell them and they'll forget, show them and they may remember, involve them and they'll understand.`,
 						chips: [
 							'Human Centered Design',
 							'Additive Industries',
+							'Duo',
 							'Research',
 						],
 						sections: [
 							'Motivation',
 							'Approach',
 							'Execution',
-							'Conclusion',
+							'Feedback',
 							'Reflection',
+							'Learning outcomes',
 							'Responsibility',
 						],
 					},

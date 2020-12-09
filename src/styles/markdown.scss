@@ -2,17 +2,12 @@
 ::ng-deep .markdown {
 	img {
 		max-width: 90%;
+		width: auto;
+		min-height: 400px;
+		height: 50vh;
+		max-height: 800px;
 		margin: 16px 5%;
 		border-radius: 4px;
-	}
-
-	a > img {
-		transition: transform 200ms ease-in-out;
-	}
-
-	a:hover > img,
-	a:active > img {
-		transform: scale(1.02);
 	}
 
 	iframe {
@@ -23,5 +18,38 @@
 		min-height: 400px;
 		height: 50vh;
 		max-height: 800px;
+		box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+			0 2px 4px -1px rgba(0, 0, 0, 0.06);
+	}
+
+	a {
+		&.image {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: auto;
+			height: auto;
+
+			> img {
+				transition: transform 200ms ease-in-out,
+					box-shadow 200ms ease-in-out;
+				transform: scale(1);
+				box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+					0 2px 4px -1px rgba(0, 0, 0, 0.06);
+			}
+
+			&:hover > img,
+			&:focus > img {
+				transform: scale(1.02);
+				box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+					0 4px 6px -2px rgba(0, 0, 0, 0.05);
+			}
+
+			&:active > img {
+				transform: scale(0.98);
+				box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1),
+					0 1px 2px 0 rgba(0, 0, 0, 0.06);
+			}
+		}
 	}
 }

@@ -56,7 +56,6 @@ export class PageSearchComponent implements OnInit {
 				}
 
 				this.results = this._getResults();
-				console.log(this.results);
 			}
 		});
 	}

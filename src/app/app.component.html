@@ -13,7 +13,7 @@
 	>
 		<input
 			type="text"
-			placeholder="Search for anything"
+			placeholder="Search for anything..."
 			id="searchInput"
 			[formControl]="control"
 			[matAutocomplete]="auto"
@@ -198,14 +198,14 @@
 		<div *ngIf="git.gitHash && git.gitHashShort && config.githubRepoURL">
 			<mat-divider></mat-divider>
 			<mat-list class="no-padding">
-				<mat-list-item class="height-80 flex-column selectable">
+				<mat-list-item class="height-96 flex-column selectable">
 					<p class="mat-small">Last commit on GitHub:</p>
 					<p class="mat-small" *ngIf="git.gitMessage">
 						{{ git.gitMessage }}
 					</p>
 					<p class="mat-small">
 						<a
-							href="{{ config.githubRepoURL }}/commit/{{
+							href="{{ config.githubRepoURL }}commit/{{
 								git.gitHash
 							}}"
 							target="_blank"
