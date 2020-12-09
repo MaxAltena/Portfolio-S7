@@ -71,6 +71,7 @@ const config: Config = {
 						chips: [
 							'Human Centered Design',
 							'Additive Industries',
+							'Personal',
 							'Research',
 						],
 						sections: [
@@ -119,6 +120,7 @@ const config: Config = {
 			info: {
 				quote: `Let's be critical about what we design. Finding problems, asking questions and make eachother think about design.`,
 				about: `Critical Design uses speculative design proposals to challenge narrow assumptions, preconceptions and givens about the role products play in everyday life. It is more of an attitude than anything else, a position rather than a method. There are many people doing this who have never heard of the term critical design and who have their own way of describing what they do. Naming it Critical Design is simply a useful way of making this activity more visible and subject to discussion and debate. Its opposite is affirmative design: design that reinforces the status quo.`,
+				reflection: `Within the minor, I learned to design critically as well. I always was focused on solving a problem, but during the minor I started to design based on finding a problem.`,
 				chips: ['Critical Design', 'Subject'],
 			},
 			children: [
