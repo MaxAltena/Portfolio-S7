@@ -41,8 +41,20 @@
 						*ngIf="page.title || page.info.about"
 					></mat-divider>
 
-					<h2 *ngIf="page.title">About {{ page.title }}</h2>
+					<h2 *ngIf="page.title && page.info.about" id="about">
+						About {{ page.title }}
+					</h2>
 					<p *ngIf="page.info.about">{{ page.info.about }}</p>
+
+					<h2
+						*ngIf="page.title && page.info.reflection"
+						id="reflection"
+					>
+						Reflection on {{ page.title}}
+					</h2>
+					<p *ngIf="page.info.reflection">
+						{{ page.info.reflection }}
+					</p>
 				</div>
 
 				<app-main

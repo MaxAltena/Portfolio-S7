@@ -27,6 +27,7 @@ export interface BasePage {
 
 export interface PageInfo {
 	about?: string;
+	reflection?: string;
 	excludeEmoji?: true;
 	iframeLocation?: string;
 	chips?: Chip[];
@@ -58,6 +59,7 @@ export type Section =
 	| 'Approach'
 	| 'Execution'
 	| 'Conclusion'
+	| 'Feedback'
 	| 'Reflection'
 	| 'Learning outcomes'
 	| 'Responsibility';
