@@ -314,6 +314,20 @@ export class AppComponent implements OnInit {
 						this.favIcon.href = this.getEmojiIconText('7️⃣');
 					}
 				}
+
+				if (paths[0].startsWith('search')) {
+					let title = config.title;
+					title = config.titleTemplate.replace(
+						'%title%',
+						config.title
+					);
+					title = title.replace(
+						'%pageTitle%',
+						'Search'
+					);
+					this.titleService.setTitle(title);
+					this.favIcon.href = this.getEmojiIconText('🔍');
+				}
 			}
 
 			if (paths[0] !== this.currentExpand) {

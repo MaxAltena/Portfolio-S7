@@ -5,4 +5,24 @@
 	flex-direction: column;
 	width: 100%;
 	height: auto;
+
+	table,
+	th,
+	td {
+		border: 1px solid black;
+		border-collapse: collapse;
+	}
+
+	table {
+		th,
+		td {
+			padding: 0.5em;
+		}
+		tr {
+			th:first-of-type,
+			td:first-of-type {
+				width: 200px;
+			}
+		}
+	}
 }
