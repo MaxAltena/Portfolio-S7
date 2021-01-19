@@ -180,8 +180,8 @@ const config: Config = {
 				},
 				{
 					type: 'default',
-					path: 'concept-digital-detox',
-					title: 'Concept: Digital Detox',
+					path: 'digital-detox',
+					title: 'Digital Detox',
 					emoji: '🌌',
 					info: {
 						quote: `Put down your phone and pick up your life.`,
@@ -231,51 +231,51 @@ const config: Config = {
 						],
 					},
 				},
+				// {
+				// 	type: 'default',
+				// 	path: 'research-storytelling-emotion',
+				// 	title: 'Research Storytelling & Emotion',
+				// 	emoji: '📝',
+				// 	info: {
+				// 		quote: `...`,
+				// 		chips: [
+				// 			'Story Creation',
+				// 			'Personal',
+				// 			'Research',
+				// 			'Assignment',
+				// 		],
+				// 		sections: [
+				// 			'Assignment',
+				// 			'Approach',
+				// 			'Execution',
+				// 			'Conclusion',
+				// 			'Reflection',
+				// 			'Responsibility',
+				// 		],
+				// 	},
+				// },
+				// {
+				// 	type: 'default',
+				// 	path: 'protaganist',
+				// 	title: 'Protaganist',
+				// 	emoji: '🚶',
+				// 	info: {
+				// 		quote: `...`,
+				// 		chips: ['Story Creation', 'Personal', 'Assignment'],
+				// 		sections: [
+				// 			'Assignment',
+				// 			'Approach',
+				// 			'Execution',
+				// 			'Conclusion',
+				// 			'Reflection',
+				// 			'Responsibility',
+				// 		],
+				// 	},
+				// },
 				{
 					type: 'default',
-					path: 'research-storytelling-emotion',
-					title: 'Research Storytelling & Emotion',
-					emoji: '📝',
-					info: {
-						quote: `...`,
-						chips: [
-							'Story Creation',
-							'Personal',
-							'Research',
-							'Assignment',
-						],
-						sections: [
-							'Assignment',
-							'Approach',
-							'Execution',
-							'Conclusion',
-							'Reflection',
-							'Responsibility',
-						],
-					},
-				},
-				{
-					type: 'default',
-					path: 'protaganist',
-					title: 'Protaganist',
-					emoji: '🚶',
-					info: {
-						quote: `...`,
-						chips: ['Story Creation', 'Personal', 'Assignment'],
-						sections: [
-							'Assignment',
-							'Approach',
-							'Execution',
-							'Conclusion',
-							'Reflection',
-							'Responsibility',
-						],
-					},
-				},
-				{
-					type: 'default',
-					path: 'story',
-					title: 'Story',
+					path: 'detoxers',
+					title: 'Detoxers',
 					emoji: '📚',
 					info: {
 						quote: `...`,
@@ -360,7 +360,7 @@ const config: Config = {
 				{
 					type: 'default',
 					path: 'essay',
-					title: 'Essay',
+					title: 'Essay: Triggers',
 					emoji: '📝',
 					info: {
 						quote: `...`,
