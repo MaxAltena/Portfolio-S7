@@ -358,8 +358,6 @@ const config: Config = {
 			info: {
 				quote:
 					"Throughout my whole life, I've been pretty funny. Some people are saying: 'You are so funny, you should be a stand-up comedian!' I always respond with: 'I would be a stand-up comedian. But I prefer sitting.' - TimTheTatman",
-				about:
-					"Well... This section is more for anything that can't be put under one of the major subjects.",
 				chips: ['Other', 'Subject'],
 			},
 			children: [
@@ -369,7 +367,7 @@ const config: Config = {
 					title: 'VEGA Collab',
 					emoji: '🇿🇦',
 					info: {
-						quote: '...',
+						quote: 'A collaboration with a South African school to create a trans-media campaign.',
 						chips: ['Other', 'Group', 'Project'],
 					},
 				},
@@ -379,7 +377,7 @@ const config: Config = {
 					title: 'Group Contribution',
 					emoji: '👥',
 					info: {
-						quote: '...',
+						quote: 'All of my contributions to the Additive Industries group project.',
 						chips: ['Other', 'Additive Industries', 'Project'],
 					},
 				},
