@@ -369,6 +369,7 @@ const config: Config = {
 					info: {
 						quote: 'A collaboration with a South African school to create a trans-media campaign.',
 						chips: ['Other', 'Group', 'Project'],
+						sections: ["Motivation", "Execution", "Reflection"]
 					},
 				},
 				{
