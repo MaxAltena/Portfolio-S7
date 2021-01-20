@@ -225,7 +225,8 @@ const config: Config = {
 					"Creating a story isn't done in a day, more like an hour or 2. But creating a compelling and engaging story might take a while.",
 				about:
 					'Storytelling is one of the most powerful tools in order to create impact and connection. The power of story goes far beyond simply relaying facts and give color and depth to otherwise bland material and they allow people to connect with the message in a deeper, more meaningful way.',
-				reflection: "Creating a meaningful story and experience for a reader was something I thought was quite easy. Yet during the course of the semester, I learned that it takes a lot of thinking about what you want to convey and how. The guidance and feedback of Judith on the products was great to have, as I wouldn't have gotten this far without it.",
+				reflection:
+					"Creating a meaningful story and experience for a reader was something I thought was quite easy. Yet during the course of the semester, I learned that it takes a lot of thinking about what you want to convey and how. The guidance and feedback of Judith on the products was great to have, as I wouldn't have gotten this far without it.",
 				chips: ['Story Creation', 'Subject'],
 			},
 			children: [
@@ -278,8 +279,9 @@ const config: Config = {
 					'How do we use media? Why do we use media? What is media? What is life all about? 42.',
 				about:
 					'During the Media Theory courses the way how media has evolved over time will be explored and how this affects us (as consumers and producers of media), the media themselves, the design of media, and how this all affects our behaviour.',
-				reflection:"Over the course of the semester, from Media Theory I haven't learned a metric ton, but I did learn a lot of valuable things. I learned to think critically about the usage of media and how I use such media. In addition, this subject made me think about designing such medias and how I would do that and if that would be ethical towards the user.",
-					chips: ['Media Theory', 'Subject'],
+				reflection:
+					"Over the course of the semester, from Media Theory I haven't learned a metric ton, but I did learn a lot of valuable things. I learned to think critically about the usage of media and how I use such media. In addition, this subject made me think about designing such medias and how I would do that and if that would be ethical towards the user.",
+				chips: ['Media Theory', 'Subject'],
 			},
 			children: [
 				{
@@ -367,9 +369,10 @@ const config: Config = {
 					title: 'VEGA Collab',
 					emoji: '🇿🇦',
 					info: {
-						quote: 'A collaboration with a South African school to create a trans-media campaign.',
+						quote:
+							'A collaboration with a South African school to create a trans-media campaign.',
 						chips: ['Other', 'Group', 'Project'],
-						sections: ["Motivation", "Execution", "Reflection"]
+						sections: ['Motivation', 'Execution', 'Reflection'],
 					},
 				},
 				{
@@ -378,8 +381,10 @@ const config: Config = {
 					title: 'Group Contribution',
 					emoji: '👥',
 					info: {
-						quote: 'All of my contributions to the Additive Industries group project.',
+						quote:
+							'All of my contributions to the Additive Industries group project.',
 						chips: ['Other', 'Additive Industries', 'Project'],
+						sections: ['Execution', 'Reflection'],
 					},
 				},
 			],
