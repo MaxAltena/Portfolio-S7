@@ -66,26 +66,18 @@ export const cdPages = [
 ];
 
 import { PagePechaKuchaComponent } from './story-creation/pecha-kucha/pecha-kucha.page';
-import { PageResearchStorytellingEmotionComponent } from './story-creation/research-storytelling-emotion/research-storytelling-emotion.page';
-import { PageProtaganistComponent } from './story-creation/protaganist/protaganist.page';
-import { PageStoryComponent } from './story-creation/story/story.page';
+import { PageDetoxersComponent } from './story-creation/detoxers/detoxers.page';
 
 export * from './story-creation/pecha-kucha/pecha-kucha.page';
-export * from './story-creation/research-storytelling-emotion/research-storytelling-emotion.page';
-export * from './story-creation/protaganist/protaganist.page';
-export * from './story-creation/story/story.page';
+export * from './story-creation/detoxers/detoxers.page';
 
 export type SCPagesType =
 	| typeof PagePechaKuchaComponent
-	| typeof PageResearchStorytellingEmotionComponent
-	| typeof PageStoryComponent
-	| typeof PageProtaganistComponent;
+	| typeof PageDetoxersComponent
 
 export const scPages = [
 	PagePechaKuchaComponent,
-	PageResearchStorytellingEmotionComponent,
-	PageStoryComponent,
-	PageProtaganistComponent,
+	PageDetoxersComponent,
 ];
 
 import { PageADayWithoutMyPhoneComponent } from './media-theory/a-day-without-my-phone/a-day-without-my-phone.page';

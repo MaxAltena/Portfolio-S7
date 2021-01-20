@@ -293,14 +293,14 @@ const config: Config = {
 					title: 'Detoxers',
 					emoji: '📚',
 					info: {
-						quote: '...',
+						quote: 'The Detoxers versus the Corpos, who will cleanse who?',
 						chips: ['Story Creation', 'Personal', 'Assignment'],
 						sections: [
 							'Assignment',
 							'Approach',
 							'Execution',
-							'Conclusion',
 							'Reflection',
+							'Learning outcomes',
 							'Responsibility',
 						],
 					},
