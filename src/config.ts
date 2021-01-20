@@ -246,47 +246,6 @@ const config: Config = {
 						],
 					},
 				},
-				// {
-				// 	type: 'default',
-				// 	path: 'research-storytelling-emotion',
-				// 	title: 'Research Storytelling & Emotion',
-				// 	emoji: '📝',
-				// 	info: {
-				// 		quote: "...",
-				// 		chips: [
-				// 			'Story Creation',
-				// 			'Personal',
-				// 			'Research',
-				// 			'Assignment',
-				// 		],
-				// 		sections: [
-				// 			'Assignment',
-				// 			'Approach',
-				// 			'Execution',
-				// 			'Conclusion',
-				// 			'Reflection',
-				// 			'Responsibility',
-				// 		],
-				// 	},
-				// },
-				// {
-				// 	type: 'default',
-				// 	path: 'protaganist',
-				// 	title: 'Protaganist',
-				// 	emoji: '🚶',
-				// 	info: {
-				// 		quote: "...",
-				// 		chips: ['Story Creation', 'Personal', 'Assignment'],
-				// 		sections: [
-				// 			'Assignment',
-				// 			'Approach',
-				// 			'Execution',
-				// 			'Conclusion',
-				// 			'Reflection',
-				// 			'Responsibility',
-				// 		],
-				// 	},
-				// },
 				{
 					type: 'default',
 					path: 'detoxers',
@@ -344,13 +303,11 @@ const config: Config = {
 					title: 'Social Analysis',
 					emoji: '🗣',
 					info: {
-						quote: '...',
+						quote: 'Analyzing why I use the media I use. Interesting? Possibly. Thought provoking? Certainly.',
 						chips: ['Media Theory', 'Personal', 'Assignment'],
 						sections: [
 							'Assignment',
-							'Approach',
 							'Execution',
-							'Conclusion',
 							'Reflection',
 							'Responsibility',
 						],
@@ -362,13 +319,10 @@ const config: Config = {
 					title: 'My AI friend',
 					emoji: '🦾',
 					info: {
-						quote: '...',
+						quote: 'Finally, an actual robot to accompany me.',
 						chips: ['Media Theory', 'Personal', 'Assignment'],
 						sections: [
 							'Assignment',
-							'Approach',
-							'Execution',
-							'Conclusion',
 							'Reflection',
 							'Responsibility',
 						],
@@ -376,17 +330,16 @@ const config: Config = {
 				},
 				{
 					type: 'default',
-					path: 'essay',
+					path: 'essay-triggers',
 					title: 'Essay: Triggers',
 					emoji: '📝',
 					info: {
-						quote: '...',
+						quote: 'Triggers started to trigger me.',
 						chips: ['Media Theory', 'Personal', 'Assignment'],
 						sections: [
 							'Assignment',
 							'Approach',
 							'Execution',
-							'Conclusion',
 							'Reflection',
 							'Responsibility',
 						],

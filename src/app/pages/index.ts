@@ -83,20 +83,24 @@ export const scPages = [
 import { PageADayWithoutMyPhoneComponent } from './media-theory/a-day-without-my-phone/a-day-without-my-phone.page';
 import { PageSocialAnalysisComponent } from './media-theory/social-analysis/social-analysis.page';
 import { PageMyAIFriendComponent } from './media-theory/my-ai-friend/my-ai-friend.page';
+import { PageEssayTriggersComponent } from './media-theory/essay-triggers/essay-triggers.page';
 
 export * from './media-theory/a-day-without-my-phone/a-day-without-my-phone.page';
 export * from './media-theory/social-analysis/social-analysis.page';
 export * from './media-theory/my-ai-friend/my-ai-friend.page';
+export * from './media-theory/essay-triggers/essay-triggers.page';
 
 export type MTPagesType =
 	| typeof PageADayWithoutMyPhoneComponent
 	| typeof PageSocialAnalysisComponent
-	| typeof PageMyAIFriendComponent;
+	| typeof PageMyAIFriendComponent
+	| typeof PageEssayTriggersComponent;
 
 export const mtPages = [
 	PageADayWithoutMyPhoneComponent,
 	PageSocialAnalysisComponent,
 	PageMyAIFriendComponent,
+	PageEssayTriggersComponent,
 ];
 
 import { PageVegaCollabComponent } from './other/vega-collab/vega-collab.page';
