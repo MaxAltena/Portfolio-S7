@@ -16,9 +16,9 @@
 	<div class="markdown">
 		<div [ngSwitch]="page.path">
 			<app-page-home *ngSwitchCase="''"></app-page-home>
-			<app-page-concept-digital-detox
-				*ngSwitchCase="'concept-digital-detox'"
-			></app-page-concept-digital-detox>
+			<app-page-digital-detox
+				*ngSwitchCase="'digital-detox'"
+			></app-page-digital-detox>
 			<app-page-concepts *ngSwitchCase="'concepts'"></app-page-concepts>
 			<app-page-critical-problems
 				*ngSwitchCase="'critical-problems'"
@@ -47,18 +47,16 @@
 			<app-page-my-ai-friend
 				*ngSwitchCase="'my-ai-friend'"
 			></app-page-my-ai-friend>
+			<app-page-essay-triggers
+				*ngSwitchCase="'essay-triggers'"
+			></app-page-essay-triggers>
 			<app-page-social-analysis
 				*ngSwitchCase="'social-analysis'"
 			></app-page-social-analysis>
 			<app-page-pecha-kucha
 				*ngSwitchCase="'pecha-kucha'"
 			></app-page-pecha-kucha>
-			<app-page-protaganist
-				*ngSwitchCase="'protaganist'"
-			></app-page-protaganist>
-			<app-page-research-storytelling-emotion
-				*ngSwitchCase="'research-storytelling-emotion'"
-			></app-page-research-storytelling-emotion>
+			<app-page-detoxers *ngSwitchCase="'detoxers'"></app-page-detoxers>
 			<app-page-other *ngSwitchCase="'other'"></app-page-other>
 			<app-page-vega-collab
 				*ngSwitchCase="'vega-collab'"
