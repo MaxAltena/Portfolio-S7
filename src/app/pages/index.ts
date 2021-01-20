@@ -45,24 +45,24 @@ export const hcdPages = [
 import { PageCriticalProblemsComponent } from './critical-design/critical-problems/critical-problems.page';
 import { PagePersonalManifestoComponent } from './critical-design/personal-manifesto/personal-manifesto.page';
 import { PageConceptsComponent } from './critical-design/concepts/concepts.page';
-import { PageConceptDigitalDetoxComponent } from './critical-design/concept-digital-detox/concept-digital-detox.page';
+import { PageDigitalDetoxComponent } from './critical-design/digital-detox/digital-detox.page';
 
 export * from './critical-design/critical-problems/critical-problems.page';
 export * from './critical-design/personal-manifesto/personal-manifesto.page';
 export * from './critical-design/concepts/concepts.page';
-export * from './critical-design/concept-digital-detox/concept-digital-detox.page';
+export * from './critical-design/digital-detox/digital-detox.page';
 
 export type CDPagesType =
 	| typeof PageCriticalProblemsComponent
 	| typeof PagePersonalManifestoComponent
 	| typeof PageConceptsComponent
-	| typeof PageConceptDigitalDetoxComponent;
+	| typeof PageDigitalDetoxComponent;
 
 export const cdPages = [
 	PageCriticalProblemsComponent,
 	PagePersonalManifestoComponent,
 	PageConceptsComponent,
-	PageConceptDigitalDetoxComponent,
+	PageDigitalDetoxComponent,
 ];
 
 import { PagePechaKuchaComponent } from './story-creation/pecha-kucha/pecha-kucha.page';
